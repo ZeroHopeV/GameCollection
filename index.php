@@ -48,7 +48,7 @@ require_once 'php_config/link.php';
                 You can find everything in the menu at the top.</p><br>
 
             <p>Instructions on how to play each game are below the game window.<br>
-            For the IT-interns in IT-development, here is the GitHub link: (link not available yet)</p>
+            For the IT-interns in IT-development, here is the GitHub link: <a href="https://github.com/ZeroHopeV/GameCollection">Link to GitHub</a></p>
 
         </div>
     </div>
