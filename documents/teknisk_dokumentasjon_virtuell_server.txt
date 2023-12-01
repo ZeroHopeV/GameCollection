@@ -4,5 +4,6 @@ virtuell switch-navn: virtual switch
 navn: vincent
 server-navn: webserver
 brukernavn: vincentadminserver
+passord: (spør han)
 
 ip: _._._._ (http://10.2.4.23/)
