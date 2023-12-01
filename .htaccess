@@ -1,0 +1,4 @@
+# Give the games access to the PHP-files
+Header add Access-Control-Allow-Origin "*"
+# Give the games access to handle requests with the PHP-files
+Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"

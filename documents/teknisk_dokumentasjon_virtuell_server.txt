@@ -1,0 +1,8 @@
+virtuell server-navn: virtual server
+virtuell switch-navn: virtual switch
+
+navn: vincent
+server-navn: webserver
+brukernavn: vincentadminserver
+
+ip: _._._._ (http://10.2.4.23/)
