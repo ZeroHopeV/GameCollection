@@ -33,6 +33,6 @@ This project is mainly a collection of games that I made that everyone can play.
 
 ### Usage and config
 
-If you want to take a deeper look at the code itself and test stuff out, you will need the database and all the files except for documentation. Remember to watch out for problems with filepath.
+If you want to take a deeper look at the code itself and test stuff out, you will need the database and all the files except for documentation. Remember to watch out for problems with filepath. If you are going to push and change something in the code, consult with me (ZeroHopeV) first before doing so.
 
 ![gameicon](images/favicon.png)
