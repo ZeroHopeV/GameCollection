@@ -4,6 +4,9 @@ virtuell switch-navn: virtual switch
 navn: vincent
 server-navn: webserver
 brukernavn: vincentadminserver
+<<<<<<< HEAD
 passord: (spør han)
+=======
+>>>>>>> eaa0580 (main_everything)
 
 ip: _._._._ (http://10.2.4.23/)
