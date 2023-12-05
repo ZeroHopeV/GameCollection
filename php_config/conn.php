@@ -1,7 +1,7 @@
 <?php
 
 // Database-name, username, password and domain
-$db = "mysql:host=localhost;dbname=gamedatabase";
+$db = "mysql:host=10.200.1.163;dbname=gamedatabase";
 $dbusername = "root";
 $dbpwd = "";
 
