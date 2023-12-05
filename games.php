@@ -70,7 +70,13 @@ if (isset($_POST["submit"])) {
 
         Incremental Journey - (Incremental)<br>
 
-        Platform Worlds - (Platformer)</p>
+        Platform Worlds - (Platformer)<br>
+
+        ? - (RPG)<br>
+
+        ? - (RPG)<br>
+
+        ? - (Bullet Hell)</p>
 
     </div>
 </div>
