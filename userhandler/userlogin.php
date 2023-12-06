@@ -38,12 +38,12 @@ if (isset($_POST["submit"])) {
             } else {
                 // Stores error message in session and sends the user back to login.php
                 $_SESSION["error"] = "Login error, incorrect password";
-                echo "testsignal3";
+                header("Location: ../login.php");
             }
         } else {
             // Stores error message in session and sends the user back to login.php
             $_SESSION["error"] = "Login error, incorrect username";
-            echo "testsignal2";
+            header("Location: ../login.php");
         }
     } catch (PDOException $e) {
         // Error message if the connection goes wrong
@@ -51,5 +51,5 @@ if (isset($_POST["submit"])) {
     }
 } else {
     // Sends the user to login.php if there is no post-request
-    echo "testsignal1";
+    header("Location: ../login.php");
 }
