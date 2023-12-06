@@ -51,5 +51,5 @@ if (isset($_POST["submit"])) {
     }
 } else {
     // Sends the user to login.php if there is no post-request
-    header("Location: ../login.php");
+    echo "testsignal1";
 }
