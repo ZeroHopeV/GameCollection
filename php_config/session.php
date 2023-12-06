@@ -11,7 +11,7 @@ session_set_cookie_params([
     // Secure communication between the domain-website and the server
     'domain' => 'localhost',
     // Secures every webpage
-    'path' => '/GameCollection',
+    'path' => '/',
     // Secures the use of session in a secure connection with https
     'secure' => true,
     // Use http protocol to avoid JavaScript-manipulation
