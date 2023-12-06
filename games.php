@@ -46,7 +46,7 @@ if (isset($_POST["submit"])) {
 
     <div class="box">
         <!--Displays the username if it exists in the session or sends the user to login.php if it does not exist-->
-        <p>Username: <?php if (isset($_SESSION['username'])) {echo htmlspecialchars($_SESSION["username"]);} else {header("Location: login.php");} ?></p>
+        <p>Username: <?php if (isset($_SESSION['username'])) {echo htmlspecialchars($_SESSION["username"]);} else {echo "testsignal1";} ?></p>
 
         <form method="POST">
             <button type="submit" name="submit" id="logout">Log out</button>
