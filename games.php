@@ -62,9 +62,9 @@ if (isset($_POST["submit"])) {
         Coming soon:<br>
 
         <p>
-        Realm: Roguelike Survival - (Hack and Slash-Roguelike)<br>
+        Realm: Roguelike Survival - (Hack and Slash + Roguelite + Roguelike)<br>
 
-        Beyond Timeless Dungeons - (RPG-Dungeon-Roguelike)<br>
+        Beyond Timeless Dungeons - (RPG + Dungeon + Roguelike)<br>
 
         Operation: Defensive Frontier - (Tower Defense)<br>
 
