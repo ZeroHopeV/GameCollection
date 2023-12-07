@@ -13,7 +13,7 @@ session_set_cookie_params([
     // Secures every webpage
     'path' => '/',
     // Secures the use of session in a secure connection with https
-    'secure' => true,
+    'secure' => false,
     // Use http protocol to avoid JavaScript-manipulation
     'httponly' => true
 ]);
