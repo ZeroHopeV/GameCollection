@@ -64,7 +64,7 @@ if (isset($_POST["submit"])) {
         <p>
         Realm: Roguelike Survival - (Hack and Slash-Roguelike)<br>
 
-        Timeless Dungeons - (RPG-Dungeon-Roguelike)
+        Timeless Dungeons - (RPG-Dungeon-Roguelike)<br>
 
         Operation: Defensive Frontier - (Tower Defense)<br>
 
