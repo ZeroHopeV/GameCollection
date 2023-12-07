@@ -64,7 +64,7 @@ if (isset($_POST["submit"])) {
         <p>
         Realm: Roguelike Survival - (Hack and Slash-Roguelike)<br>
 
-        Timeless Dungeons - (RPG-Dungeon-Roguelike)<br>
+        Beyond Timeless Dungeons - (RPG-Dungeon-Roguelike)<br>
 
         Operation: Defensive Frontier - (Tower Defense)<br>
 
@@ -72,11 +72,11 @@ if (isset($_POST["submit"])) {
 
         Platform Worlds - (Platformer)<br>
 
-        ? - (RPG)<br>
+        Battle Quest: Road To Mastery - (RPG)<br>
 
-        ? - (Tactical RPG)<br>
+        Fighting Mind - (Tactical RPG)<br>
 
-        ? - (Bullet Hell)</p>
+        Live In The Storm - (Bullet Hell)</p>
 
     </div>
 </div>
