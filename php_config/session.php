@@ -12,7 +12,7 @@ session_set_cookie_params([
     'domain' => '10.200.1.163',
     // Secures every webpage
     'path' => '/',
-    // Secures the use of session in a secure connection with https
+    // Secures the use of session in a secure connection with https, but since the server uses http, it is set to false
     'secure' => false,
     // Use http protocol to avoid JavaScript-manipulation
     'httponly' => true
