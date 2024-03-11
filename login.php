@@ -30,6 +30,14 @@ require_once 'php_config/conn.php';
             <a href="leaderboards.php">Leaderboards</a>
         </div>
 
+        <div class="link">
+            <a href="faq.php">FAQ</a>
+        </div>
+
+        <div class="link">
+            <a href="help.php">Help Support</a>
+        </div>
+
     </div>
 
     <div id="header">

@@ -9,11 +9,11 @@ session_set_cookie_params([
     // Session lasts for 4 hours
     'lifetime' => 14400,
     // Secure communication between the domain-website and the server
-    'domain' => '10.200.1.163',
-    // Secures every webpage
+    'domain' => 'localhost',
+    // Secures evey webpage
     'path' => '/',
-    // Secures the use of session in a secure connection with https, but since the server uses http, it is set to false
-    'secure' => false,
+    // Secures the use of session in a secure connection with https
+    'secure' => true,
     // Use http protocol to avoid JavaScript-manipulation
     'httponly' => true
 ]);

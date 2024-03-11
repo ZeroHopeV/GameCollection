@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once '../php_config/conn.php';
 
         // Selects everything from run_forever with a specific user-id
-        $query = "SELECT * FROM run_forever WHERE user_id = :user_id;";
+        $query = "SELECT * FROM run_forever WHERE run_forever_id = :user_id;";
         // Prepares the query
         $stmt = $pdo->prepare($query);
         // Binds the parameter
@@ -21,11 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($stmt->rowCount() > 0) {
             // Fetches the result as an associative array
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            // Checks if hardhighscore exists in the array
-            if (isset($result['hardhighscore'])) {
-                // Sends hardhighscore to the game
-                echo $result['hardhighscore'];
-            }
+            // Sends hardhighscore to the game
+            echo $result['hardhighscore'];
         }
 
     } catch (PDOException $e) {

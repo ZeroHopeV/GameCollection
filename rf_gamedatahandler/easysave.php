@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once '../php_config/conn.php';
 
         // Selects everything from run_forever with a specific user-id
-        $check_query = "SELECT * FROM run_forever WHERE user_id = :user_id;";
+        $check_query = "SELECT * FROM run_forever WHERE run_forever_id = :user_id;";
         // Prepares the query
         $check_stmt = $pdo->prepare($check_query);
         // Binds the parameter
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Checks if the result of the query returns over 0 rows
         if ($check_stmt->rowCount() > 0) {
             // Updates easyhighscore in run_forever with a specific user-id
-            $update_query = "UPDATE run_forever SET easyhighscore = :easyhighscore WHERE user_id = :user_id;";
+            $update_query = "UPDATE run_forever SET easyhighscore = :easyhighscore WHERE run_forever_id = :user_id;";
             // Prepares the query
             $update_stmt = $pdo->prepare($update_query);
             // Binds the parameters
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         } else {
             // Inserts easyhighscore into run_forever with a specific user-id
-            $insert_query = "INSERT INTO run_forever (user_id, easyhighscore) VALUES (:user_id, :easyhighscore);";
+            $insert_query = "INSERT INTO run_forever (run_forever_id, easyhighscore, normalhighscore, hardhighscore) VALUES (:user_id, :easyhighscore, 0, 0);";
             // Prepares the query
             $insert_stmt = $pdo->prepare($insert_query);
             // Binds the parameters

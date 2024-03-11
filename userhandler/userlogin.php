@@ -8,12 +8,12 @@ if (isset($_POST["submit"])) {
         // Gets the relevant file for connection
         require_once '../php_config/conn.php';
 
-        // Obtains both username and password, removes whitespace at the start and the end of the password
-        $username = $_POST["username"];
+        // Obtains both username and password, removes whitespace at the start and the end of the password and the username
+        $username = trim($_POST["username"]);
         $pwd = trim($_POST["pwd"]);
 
         // Selects everything from userinfo with a specific username
-        $query = "SELECT * FROM userinfo WHERE username=:username;";
+        $query = "SELECT * FROM userinfo WHERE username = :username;";
         // Prepares the query for improved security
         $stmt = $pdo->prepare($query);
         // Binds the parameter
@@ -34,6 +34,7 @@ if (isset($_POST["submit"])) {
                 // Stores username and user-id in session and sends the user to games.php
                 $_SESSION["username"] = $result["username"];
                 $_SESSION["user_id"] = $result["user_id"];
+                $_SESSION["admin"] = $result["admin"];
                 header("Location: ../games.php");
             } else {
                 // Stores error message in session and sends the user back to login.php

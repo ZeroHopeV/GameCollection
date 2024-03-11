@@ -32,6 +32,14 @@ require_once 'php_config/link.php';
             <a href="leaderboards.php">Leaderboards</a>
         </div>
 
+        <div class="link">
+            <a href="faq.php">FAQ</a>
+        </div>
+
+        <div class="link">
+            <a href="help.php">Help Support</a>
+        </div>
+
     </div>
 
     <div id="header">
@@ -45,20 +53,36 @@ require_once 'php_config/link.php';
         <!-- The iframe for the game -->
         <iframe id="runner" src="run_forever/index.html"></iframe>
 
-        Instructions:<br>
+        <div class="heading">Instructions:</div><br>
         <p>Use mouse to pick difficulty<br>
             Press W-key to jump<br>
             Hold to jump higher</p>
 
         <img src="images/run_forever.png" alt="gameicon">
 
-        Leaderboards: (Reload the page to update)
+        <p>Leaderboards: (Reload the page to update)</p><br>
+        <form method="post" action="">
+            Order by:
+            <select name="order">
+                <option value="deafault">Deafault</option>
+                <option value="username">Username</option>
+                <option value="easy">Easy</option>
+                <option value="normal">Normal</option>
+                <option value="hard">Hard</option>
+            </select>
+            <input type="submit" name="runner" value="Reload">
+        </form>
+
         <?php
-        // Selects everything in run_forever, including username from userinfo
+        // Selects everything from run_forever, including username from userinfo
         // Connects with inner join by comparing user-id in both run_forever and userinfo to see which user-id exists in both tables/in userinfo also exists in run_forever
         $runner_query = "SELECT run_forever.*, userinfo.username 
                             FROM run_forever INNER JOIN userinfo 
-                            ON run_forever.user_id = userinfo.user_id;";
+                            ON run_forever.run_forever_id = userinfo.user_id;";
+
+        // Gets the relevant file for ordering the leaderboard
+        require_once 'other_config/rf_query_order.php';
+
         // Preapres the query for improved security
         $runner_stmt = $pdo->prepare($runner_query);
         // Executes the query
@@ -75,12 +99,12 @@ require_once 'php_config/link.php';
             </tr>
             <!-- Runs for every query by getting every row as an associative array -->
             <?php while ($row = $runner_stmt->fetch(PDO::FETCH_ASSOC)) { ?>
-                <tr>
+                <tr <?php if ($_SESSION["username"] === htmlspecialchars($row['username'])) {echo 'style="color: #00ffff"';} ?>>
                     <!-- Display username and highscore for each difficulty for each row in a table -->
                     <td><?php echo htmlspecialchars($row['username']); ?></td>
-                    <td><?php if (isset($row['easyhighscore'])) {echo htmlspecialchars($row['easyhighscore']);} else {echo "0";} ?></td>
-                    <td><?php if (isset($row['normalhighscore'])) {echo htmlspecialchars($row['normalhighscore']);} else {echo "0";} ?></td>
-                    <td><?php if (isset($row['hardhighscore'])) {echo htmlspecialchars($row['hardhighscore']);} else {echo "0";} ?></td>
+                    <td><?php echo htmlspecialchars($row['easyhighscore']); ?></td>
+                    <td><?php echo htmlspecialchars($row['normalhighscore']); ?></td>
+                    <td><?php echo htmlspecialchars($row['hardhighscore']); ?></td>
                 </tr>
             <?php } ?>
         </table>

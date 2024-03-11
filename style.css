@@ -64,6 +64,7 @@ body{
     justify-content: center;
     margin-bottom: 15px;
     width: 100%;
+    text-align: center;
 }
 
 .box{
@@ -88,9 +89,17 @@ body{
     transition: 1s;
 }
 
-button{
+.heading{
+    font-size: 25px;
+    color: #ffff00;
+}
+
+button, input, select{
     font-family: monospace;
     font-size: 17px;
+}
+
+button{
     padding: 10px;
     margin: 5px;
     margin-top: 15px;
@@ -114,6 +123,12 @@ input{
     height: 30px;
 }
 
+select{
+    margin-bottom: 20px;
+    padding: 5px;
+    height: 30px;
+}
+
 iframe{
     border:  5px solid;
     margin: 20px;
@@ -132,9 +147,22 @@ iframe{
     border-color: #00ff00 #0000ff #00ff00 #0000ff;
 }
 
+#roguelike{
+    border-color: #0000ff #00ff00 #0000ff #00ff00;
+    min-width: 960px;
+    min-height: 525px;
+}
+
+#runner, #roguelike{
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .center{
     width: 750px;
     text-align: left;
+    padding: 15px;
+    margin: 15px;
 }
 
 #logout{
@@ -149,6 +177,21 @@ table{
 td, th{
     padding: 10px;
     margin: 10px;
+}
+
+textarea{
+    min-width: 300px;
+    min-height: 100px;
+    margin: 15px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+@media (max-width: 1230px) {
+    #roguelike{
+        min-width: 640px;
+        min-height: 350px;
+    }
 }
 
 @media (max-width: 1050px) {
@@ -173,12 +216,22 @@ td, th{
         font-size: 17px;
     }
     .box {
-        padding: 2px;
+        padding: 15px;
         font-size: 17px;
     }
     #runner{
         min-width: 600px;
         min-height: 300px;
+    }
+    .center{
+        width: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    #roguelike{
+        min-width: 480px;
+        min-height: 262.5px;
     }
 }
 
@@ -189,6 +242,13 @@ td, th{
     }
     td, th{
         font-size: 15px;
+    }
+    #header{
+        font-size: 22px;
+    }
+    #roguelike{
+        min-width: 320px;
+        min-height: 175px;
     }
 }
 

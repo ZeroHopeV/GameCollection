@@ -3,6 +3,11 @@
 require_once 'php_config/session.php';
 require_once 'php_config/conn.php';
 require_once 'php_config/link.php';
+
+$query = "SELECT * FROM announcement;";
+$stmt = $pdo->prepare($query);
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +37,14 @@ require_once 'php_config/link.php';
             <a href="leaderboards.php"> Leaderboards</a>
         </div>
 
+        <div class="link">
+            <a href="faq.php">FAQ</a>
+        </div>
+
+        <div class="link">
+            <a href="help.php">Help Support</a>
+        </div>
+
     </div>
 
     <div id="header">
@@ -40,6 +53,9 @@ require_once 'php_config/link.php';
 
     <div class="box">
         <div class="center">
+            <div class="heading">
+                Welcome...
+            </div>
             <!--random introduction info text-->
             <p>This is a game collection, or like a small arcade.
                 Make a user and play something.
@@ -48,8 +64,22 @@ require_once 'php_config/link.php';
                 You can find everything in the menu at the top.</p><br>
 
             <p>Instructions on how to play each game are below the game window.<br>
-            For the IT-interns in IT-development, here is the GitHub link: <a href="https://github.com/ZeroHopeV/GameCollection">Link to GitHub</a></p>
+            For the IT-interns, here is the GitHub link: <a href="https://github.com/ZeroHopeV/GameCollection">Link to GitHub</a></p><br>
 
+
+            <?php
+            if (empty($result)) {
+                echo "<p class='heading'>No announcements... (yet)</p>";
+            } else {
+                echo "<div class='heading'>Announcements:</div>";
+                foreach ($result as $row) {
+                    echo "<p>";
+                    echo htmlspecialchars($row["datetime"])."<br>";
+                    echo htmlspecialchars($row["content"])."<br>";
+                    echo "</p><br>";
+                }
+            }
+            ?>
         </div>
     </div>
 

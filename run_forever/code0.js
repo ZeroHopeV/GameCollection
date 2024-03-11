@@ -27,17 +27,9 @@ gdjs.startmenuCode.GDversionObjects1= [];
 gdjs.startmenuCode.GDversionObjects2= [];
 gdjs.startmenuCode.GDversionObjects3= [];
 gdjs.startmenuCode.GDversionObjects4= [];
-gdjs.startmenuCode.GDscoretextObjects1= [];
-gdjs.startmenuCode.GDscoretextObjects2= [];
-gdjs.startmenuCode.GDscoretextObjects3= [];
-gdjs.startmenuCode.GDscoretextObjects4= [];
-gdjs.startmenuCode.GDdifficultyObjects1= [];
-gdjs.startmenuCode.GDdifficultyObjects2= [];
-gdjs.startmenuCode.GDdifficultyObjects3= [];
-gdjs.startmenuCode.GDdifficultyObjects4= [];
 
 
-gdjs.startmenuCode.asyncCallback8963852 = function (runtimeScene, asyncObjectsList) {
+gdjs.startmenuCode.asyncCallback10530308 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(4).setNumber(gdjs.evtTools.common.toNumber(runtimeScene.getScene().getVariables().getFromIndex(0).getAsString()));
 }{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(5), true);
 }}
@@ -50,14 +42,14 @@ gdjs.startmenuCode.eventsList0 = function(runtimeScene, asyncObjectsList) {
 const parentAsyncObjectsList = asyncObjectsList;
 {
 const asyncObjectsList = gdjs.LongLivedObjectsList.from(parentAsyncObjectsList);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rf_gamedatahandler/hardget.php", "", "POST", "application/x-www-form-urlencoded", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback8963852(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://localhost/im/aarsoppgave/rf_gamedatahandler/hardget.php", "", "POST", "application/x-www-form-urlencoded", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback10530308(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.startmenuCode.asyncCallback8962260 = function (runtimeScene, asyncObjectsList) {
+};gdjs.startmenuCode.asyncCallback10528748 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(3).setNumber(gdjs.evtTools.common.toNumber(runtimeScene.getScene().getVariables().getFromIndex(0).getAsString()));
 }
 { //Subevents
@@ -72,14 +64,14 @@ gdjs.startmenuCode.eventsList1 = function(runtimeScene, asyncObjectsList) {
 const parentAsyncObjectsList = asyncObjectsList;
 {
 const asyncObjectsList = gdjs.LongLivedObjectsList.from(parentAsyncObjectsList);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rf_gamedatahandler/normalget.php", "", "POST", "application/x-www-form-urlencoded", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback8962260(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://localhost/im/aarsoppgave/rf_gamedatahandler/normalget.php", "", "POST", "application/x-www-form-urlencoded", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback10528748(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.startmenuCode.asyncCallback8960660 = function (runtimeScene, asyncObjectsList) {
+};gdjs.startmenuCode.asyncCallback10528972 = function (runtimeScene, asyncObjectsList) {
 {runtimeScene.getGame().getVariables().getFromIndex(2).setNumber(gdjs.evtTools.common.toNumber(runtimeScene.getScene().getVariables().getFromIndex(0).getAsString()));
 }
 { //Subevents
@@ -93,7 +85,7 @@ gdjs.startmenuCode.eventsList2 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rf_gamedatahandler/easyget.php", "", "POST", "application/x-www-form-urlencoded", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback8960660(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://localhost/im/aarsoppgave/rf_gamedatahandler/easyget.php", "", "POST", "application/x-www-form-urlencoded", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback10528972(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -126,7 +118,8 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
-
+{gdjs.evtTools.runtimeScene.setBackgroundColor(runtimeScene, "155;155;155");
+}
 { //Subevents
 gdjs.startmenuCode.eventsList3(runtimeScene);} //End of subevents
 }
@@ -233,14 +226,6 @@ gdjs.startmenuCode.GDversionObjects1.length = 0;
 gdjs.startmenuCode.GDversionObjects2.length = 0;
 gdjs.startmenuCode.GDversionObjects3.length = 0;
 gdjs.startmenuCode.GDversionObjects4.length = 0;
-gdjs.startmenuCode.GDscoretextObjects1.length = 0;
-gdjs.startmenuCode.GDscoretextObjects2.length = 0;
-gdjs.startmenuCode.GDscoretextObjects3.length = 0;
-gdjs.startmenuCode.GDscoretextObjects4.length = 0;
-gdjs.startmenuCode.GDdifficultyObjects1.length = 0;
-gdjs.startmenuCode.GDdifficultyObjects2.length = 0;
-gdjs.startmenuCode.GDdifficultyObjects3.length = 0;
-gdjs.startmenuCode.GDdifficultyObjects4.length = 0;
 
 gdjs.startmenuCode.eventsList4(runtimeScene);
 

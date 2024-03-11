@@ -18,11 +18,11 @@ if (isset($_POST["submit"])) {
             $_SESSION["error"] = "Passwords do not match";
             header("Location: ../create.php");
         } else {
-            // Trims the username the same ways the passwords
+            // Trims the username the same way as the passwords
             $username = trim($_POST["username"]);
 
             // Selects everything from userinfo with a specific username
-            $username_query = "SELECT * FROM userinfo WHERE username=:username;";
+            $username_query = "SELECT * FROM userinfo WHERE username = :username;";
             // Prepares the query for improved security
             $username_stmt = $pdo->prepare($username_query);
             // Binds the parameter
@@ -40,7 +40,7 @@ if (isset($_POST["submit"])) {
                 $pwd_hash = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
 
                 // Inserts username and password into userinfo
-                $main_query = "INSERT INTO userinfo (username, pwd) VALUES (:username, :pwd);";
+                $main_query = "INSERT INTO userinfo (username, pwd, admin) VALUES (:username, :pwd, 0);";
                 // Prepares the query
                 $main_stmt = $pdo->prepare($main_query);
                 // Binds the parameters
@@ -54,6 +54,7 @@ if (isset($_POST["submit"])) {
                 // Stores username and user-id in session, the user-id is obtained by getting the last inserted id by a query
                 $_SESSION["username"] = $username;
                 $_SESSION["user_id"] = $pdo->lastInsertId();
+                $_SESSION["admin"] = 0;
                 // Sends the user to games.php
                 header("Location: ../games.php");
             }

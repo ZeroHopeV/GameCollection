@@ -38,6 +38,14 @@ if (isset($_POST["submit"])) {
             <a href="leaderboards.php">Leaderboards</a>
         </div>
 
+        <div class="link">
+            <a href="faq.php">FAQ</a>
+        </div>
+
+        <div class="link">
+            <a href="help.php">Help Support</a>
+        </div>
+
     </div>
 
     <div id="header">
@@ -52,31 +60,36 @@ if (isset($_POST["submit"])) {
             <button type="submit" name="submit" id="logout">Log out</button>
         </form>
 
-        <p>Game Library Collection:</p>
+        <?php
+        if ($_SESSION["admin"] === 1) {
+            echo "<a href='admin.php'>Admin Operations</a>";
+        }
+        ?>
 
-        <a href="run_forever.php">Run Forever - (1-Path 2D Runner)</a><br>
-        <img src="images/run_forever.png" alt="game icon">
+        <div class="heading"><p>Game Library Collection:</p></div>
 
-        <p>(More games and updates in development...)</p>
+        <p><a href="run_forever.php">Run Forever - (1-Path 2D Runner)</a><br>
+        <img src="images/run_forever.png" alt="game icon"></p>
 
-        Coming soon:<br>
+        <p><a href="realm_roguelike_survival.php">Realm: Roguelike Survival - (Hack and Slash + Roguelite + Roguelike)</a><br>
+        <img src="images/realm_roguelike_survival.png" alt="game icon"></p>
+
+        <div class="heading"><p>(More games and updates in development...)</p></div>
+
+        <div class="heading">Coming soon:</div><br>
 
         <p>
-        Realm: Roguelike Survival - (Hack and Slash + Roguelite + Roguelike)<br>
-        <br>
-        Beyond Timeless Dungeons - (RPG + Dungeon + Roguelike)<br>
-        <br>
-        Operation: Defensive Frontier - (Tower Defense)<br>
-        <br>
-        Incremental Journey - (Incremental)<br>
-        <br>
-        Platform Worlds - (Platformer)<br>
-        <br>
-        Battle Quest: Road To Mastery - (RPG)<br>
-        <br>
-        Fighting Mind - (Tactical RPG)<br>
-        <br>
-        Live In The Storm - (Bullet Hell)</p>
+            Operation: Defensive Frontier - (Tower Defense)<br>
+            <br>
+            Incremental Journey - (Incremental)<br>
+            <br>
+            Platform Worlds - (Platformer)<br>
+            <br>
+            Battle Quest: Road To Mastery - (RPG)<br>
+            <br>
+            Fighting Mind - (Tactical RPG)<br>
+            <br>
+            Live In The Storm - (Bullet Hell)</p>
 
     </div>
 </div>
