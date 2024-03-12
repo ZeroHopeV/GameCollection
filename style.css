@@ -187,6 +187,10 @@ textarea{
     font-size: 17px;
 }
 
+.showcase{
+    max-width: 400px;
+}
+
 @media (max-width: 1230px) {
     #roguelike{
         min-width: 640px;
