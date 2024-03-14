@@ -1,0 +1,12 @@
+{
+  "name": "Realm: Roguelike Survival",
+  "short_name": "Realm: Roguelike Survival",
+  "id": "com.example.gamename",
+  "description": "",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
