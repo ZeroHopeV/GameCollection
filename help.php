@@ -47,7 +47,7 @@ require_once 'php_config/link.php';
     </div>
 
     <div class="box">
-        (video work in progress)<!--
+        <!--
         <video controls>
             <source src="#" type="video/mp4">
         </video>
