@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.6.12-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.6.16-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: gamedatabase
 -- ------------------------------------------------------
--- Server version	10.6.12-MariaDB-0ubuntu0.22.04.1
+-- Server version	10.6.16-MariaDB-0ubuntu0.22.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,6 +16,59 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `announcement`
+--
+
+DROP TABLE IF EXISTS `announcement`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `announcement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `creator_id` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `fk_announcement_userinfo1_idx` (`creator_id`),
+  CONSTRAINT `fk_announcement_userinfo1` FOREIGN KEY (`creator_id`) REFERENCES `userinfo` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `announcement`
+--
+
+LOCK TABLES `announcement` WRITE;
+/*!40000 ALTER TABLE `announcement` DISABLE KEYS */;
+INSERT INTO `announcement` VALUES (1,1,'New game in progress...','2024-01-29 09:58:37');
+/*!40000 ALTER TABLE `announcement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `roguelike_survival`
+--
+
+DROP TABLE IF EXISTS `roguelike_survival`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roguelike_survival` (
+  `roguelike_survival_id` int(11) NOT NULL,
+  `highscore` float NOT NULL,
+  PRIMARY KEY (`roguelike_survival_id`),
+  CONSTRAINT `fk_roguelike_survival_userinfo1` FOREIGN KEY (`roguelike_survival_id`) REFERENCES `userinfo` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roguelike_survival`
+--
+
+LOCK TABLES `roguelike_survival` WRITE;
+/*!40000 ALTER TABLE `roguelike_survival` DISABLE KEYS */;
+INSERT INTO `roguelike_survival` VALUES (1,4575),(2,17);
+/*!40000 ALTER TABLE `roguelike_survival` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `run_forever`
 --
 
@@ -23,15 +76,14 @@ DROP TABLE IF EXISTS `run_forever`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `run_forever` (
-  `run_forever_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `easyhighscore` float DEFAULT NULL,
-  `normalhighscore` float DEFAULT NULL,
-  `hardhighscore` float DEFAULT NULL,
+  `run_forever_id` int(11) NOT NULL,
+  `easyhighscore` float NOT NULL,
+  `normalhighscore` float NOT NULL,
+  `hardhighscore` float NOT NULL,
   PRIMARY KEY (`run_forever_id`),
-  KEY `fk_runner_game_userinfo_idx` (`user_id`),
-  CONSTRAINT `fk_runner_game_userinfo` FOREIGN KEY (`user_id`) REFERENCES `userinfo` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+  KEY `fk_runner_game_userinfo_idx` (`run_forever_id`),
+  CONSTRAINT `fk_runner_game_userinfo` FOREIGN KEY (`run_forever_id`) REFERENCES `userinfo` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +92,7 @@ CREATE TABLE `run_forever` (
 
 LOCK TABLES `run_forever` WRITE;
 /*!40000 ALTER TABLE `run_forever` DISABLE KEYS */;
-INSERT INTO `run_forever` VALUES (1,1,1007,421,201),(2,2,78,87,56),(3,3,125,31,38),(4,5,15,130,46),(5,6,38,48,30),(6,7,NULL,NULL,70),(7,8,45,NULL,NULL);
+INSERT INTO `run_forever` VALUES (1,1007,256,201),(2,0,0,3);
 /*!40000 ALTER TABLE `run_forever` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,8 +107,9 @@ CREATE TABLE `userinfo` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
   `pwd` varchar(255) NOT NULL,
+  `admin` tinyint(4) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +118,7 @@ CREATE TABLE `userinfo` (
 
 LOCK TABLES `userinfo` WRITE;
 /*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
-INSERT INTO `userinfo` VALUES (1,'ZeroHopeV','$2y$10$Ss2y3.eT5PB5VJJsc4exauc3fv.6WEEm8NViETyHV9B0BC2bWDQvW'),(2,'ulreik','$2y$10$FQ/oJq.D4b0yOzvRFR9P.eN8Vd24UAUvAmOmi0n7ljS0OHFWiC19W'),(3,'M','$2y$10$tA9Yzo5uCEbr0lE/L1ICYeHUjJe7Ph7ribTkSV7SnWI4bIqvsoFzm'),(4,'Anders','$2y$10$HQDMGs6IAh1pzATCfXaes.DAXrfESYKtZGiyA/aAsbRBSR2rfeFNm'),(5,'UBN','$2y$10$JPkE541cTuIApWaC5OyILe3sQQw//iMjjpsQ0CJWHVaAld8IWDwvi'),(6,'sigurd','$2y$10$mk9wcobef8jGHfVIdQsOgOZg9zfKE47v9K80G758RZ/AFC9PLj0tW'),(7,'ulrikbrukernr40','$2y$10$aI1.wEu6u8OEbTn52m5M.eajMSkFxWFfYCIHi2MSZ4Iot6.MQYj2q'),(8,'kubenIT','$2y$10$BRjnet/zh/KsuQWVmORGMOLepHEVhmIVZzdxvL8Z2EI89tgvj12tu');
+INSERT INTO `userinfo` VALUES (1,'ZeroHopeV','$2y$10$cbj47VXGatbQqnJg/Yr7Se4sOnG2yJTtLhd84mhUuNIRFLlzO5YZS',1),(2,'testuser','$2y$10$GSroXn8s25kgJ5ewTmaU0OPOvrn8C2zHROVyqIAyzZaWaWUxlUgrm',0);
 /*!40000 ALTER TABLE `userinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -78,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-05  9:08:43
+-- Dump completed on 2024-03-13 10:10:44
