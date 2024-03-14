@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ObjectStack__DefineHelperClasses !== "undefined") {
 gdjs.evtsExt__ObjectStack__DefineHelperClasses = {};
 
 
-gdjs.evtsExt__ObjectStack__DefineHelperClasses.userFunc0x867888 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ObjectStack__DefineHelperClasses.userFunc0xa3ee68 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 if (gdjs._objectStackExtension) {
     return;
@@ -185,7 +185,7 @@ gdjs.evtsExt__ObjectStack__DefineHelperClasses.eventsList0 = function(runtimeSce
 {
 
 
-gdjs.evtsExt__ObjectStack__DefineHelperClasses.userFunc0x867888(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ObjectStack__DefineHelperClasses.userFunc0xa3ee68(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
