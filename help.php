@@ -47,7 +47,12 @@ require_once 'php_config/link.php';
     </div>
 
     <div class="box">
-        (video)
+        (video work in progress)<!--
+        <video controls>
+            <source src="#" type="video/mp4">
+        </video>
+        -->
+
         <div class="center">
             <div class="heading">The main page</div>
             <img src="images/mainpage.png" alt="main page" class="showcase">
