@@ -67,19 +67,20 @@ require_once 'php_config/link.php';
 
             <div class="heading">Games</div>
             <img src="images/games.png" alt="games page" class="showcase">
-            <p>Collection of games that are available to play. Click the game you want to play.
-                The instructions for each game is under the game window.
+            <p>Collection of games that are available to play.
+                Click the game you want to play to proceed to the game page for the chosen game.
+                The instructions for each game is located under the game window.
                 The highscore for each game are saved in the database connected to your user.
                 There is a leaderboard at the bottom of each game page related to the game.
-                You can choose to sort/order the leaderboards from what kind of stats are available for each game.
-                This page can only be found and accessed after logging inn.</p>
+                You can choose to sort/order the leaderboards by what kind of stats are available for each game.
+                This page can only be found and accessed after logging in.</p>
             <br>
 
             <div class="heading">Leaderboards</div>
             <img src="images/leaderboards.png" alt="leaderboards page" class="showcase">
             <p>Where you can see leaderboards for every game available here.
-                You can choose to sort/order the leaderboards from what kind of information are available for each game.
-                Your will be highlighted if you are already logged in.</p>
+                You can choose to sort/order the leaderboards by what kind of information are available for each game.
+                Your user will be highlighted in the leaderboards if you are already logged in.</p>
             <br>
 
             <div class="heading">FAQ</div>
