@@ -81,6 +81,8 @@ gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.PanelSpriteButton = class Pan
   _setHoveredFadeOutDuration(newValue) {
     this._objectData.HoveredFadeOutDuration = newValue;
   }
+
+  
 }
 
 // Methods:
@@ -496,7 +498,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.Pa
 gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.PanelSpriteButton.prototype.doStepPostEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(23711620);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(23724932);
 }
 }
 if (isConditionTrue_0) {
@@ -564,7 +566,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.Pa
 gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.PanelSpriteButton.prototype.doStepPostEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(23714796);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(23728108);
 }
 }
 if (isConditionTrue_0) {
@@ -612,7 +614,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.Pa
 gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.PanelSpriteButton.prototype.doStepPostEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(23716548);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(23729860);
 }
 }
 if (isConditionTrue_0) {
@@ -654,7 +656,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.Pa
 gdjs.evtsExt__PanelSpriteButton__PanelSpriteButton.PanelSpriteButton.prototype.doStepPostEventsContext.GDObjectObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(23717588);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(23730900);
 }
 }
 if (isConditionTrue_0) {

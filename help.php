@@ -56,7 +56,7 @@ require_once 'php_config/link.php';
         <div class="center">
             <div class="heading">The main page</div>
             <img src="images/mainpage.png" alt="main page" class="showcase">
-            <p>The starting page with info and announcements. Use the menu to navigate through different pages.</p>
+            <p>The main page with info and announcements. Use the menu to navigate through different pages.</p>
             <br>
 
             <div class="heading">Login/Create user</div>

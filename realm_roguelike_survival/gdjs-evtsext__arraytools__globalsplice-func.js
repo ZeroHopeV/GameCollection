@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__GlobalSplice !== "undefined") {
 gdjs.evtsExt__ArrayTools__GlobalSplice = {};
 
 
-gdjs.evtsExt__ArrayTools__GlobalSplice.userFunc0x122d1e0 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__GlobalSplice.userFunc0x12bf8e0 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -31,7 +31,7 @@ gdjs.evtsExt__ArrayTools__GlobalSplice.eventsList0 = function(runtimeScene, even
 {
 
 
-gdjs.evtsExt__ArrayTools__GlobalSplice.userFunc0x122d1e0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__GlobalSplice.userFunc0x12bf8e0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
