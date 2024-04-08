@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__CurvedMovement__DuplicatedPath !== "undefined") {
 gdjs.evtsExt__CurvedMovement__DuplicatedPath = {};
 
 
-gdjs.evtsExt__CurvedMovement__DuplicatedPath.userFunc0xa3cd48 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__CurvedMovement__DuplicatedPath.userFunc0xeca650 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 const createdPathName = eventsFunctionContext.getArgument("CreatedPathName");
 const sourcePathName = eventsFunctionContext.getArgument("SourcePathName");
@@ -26,7 +26,7 @@ gdjs.evtsExt__CurvedMovement__DuplicatedPath.eventsList0 = function(runtimeScene
 {
 
 
-gdjs.evtsExt__CurvedMovement__DuplicatedPath.userFunc0xa3cd48(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__CurvedMovement__DuplicatedPath.userFunc0xeca650(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

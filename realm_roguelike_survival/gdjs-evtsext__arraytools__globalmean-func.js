@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__GlobalMean !== "undefined") {
 gdjs.evtsExt__ArrayTools__GlobalMean = {};
 
 
-gdjs.evtsExt__ArrayTools__GlobalMean.userFunc0x11c1f98 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__GlobalMean.userFunc0x1131250 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable[]} */
 const internalArray = eventsFunctionContext.getArgument("Array").getAllChildrenArray();
@@ -24,7 +24,7 @@ gdjs.evtsExt__ArrayTools__GlobalMean.eventsList0 = function(runtimeScene, events
 {
 
 
-gdjs.evtsExt__ArrayTools__GlobalMean.userFunc0x11c1f98(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__GlobalMean.userFunc0x1131250(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
