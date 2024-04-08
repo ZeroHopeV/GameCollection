@@ -66,7 +66,7 @@ require_once 'php_config/link.php';
             <div class="heading">
                 What kind of data are saved?
             </div>
-            <p>Mainly username, game progress, and hashed password are the data saved from users, for privacy and legal reasons. (GDPR - Privacy)</p>
+            <p>Mainly username, game progress, and hashed password are the data saved, nothing much</p>
         </div>
     </div>
 
