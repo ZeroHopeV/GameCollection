@@ -4,9 +4,13 @@ require_once 'php_config/session.php';
 require_once 'php_config/conn.php';
 require_once 'php_config/link.php';
 
+// Selects everything from announcement
 $query = "SELECT * FROM announcement;";
+// Prepares the query for improved security
 $stmt = $pdo->prepare($query);
+// Executes the query
 $stmt->execute();
+// Stores the result of the query by storing all the rows into associative arrays
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -68,10 +72,12 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
             <?php
+            // Checks if the result is empty
             if (empty($result)) {
                 echo "<p class='heading'>No announcements... (yet)</p>";
             } else {
                 echo "<div class='heading'>Announcements:</div>";
+                // Runs for each row in result
                 foreach ($result as $row) {
                     echo "<p>";
                     echo htmlspecialchars($row["datetime"])."<br>";

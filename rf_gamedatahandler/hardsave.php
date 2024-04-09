@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once '../php_config/conn.php';
 
         // Selects everything from run_forever with a specific user-id
-        $check_query = "SELECT * FROM run_forever WHERE run_forever_id  = :user_id;";
+        $check_query = "SELECT * FROM run_forever WHERE run_forever_id = :user_id;";
         // Prepares the query
         $check_stmt = $pdo->prepare($check_query);
         // Binds the parameter

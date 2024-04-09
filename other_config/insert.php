@@ -18,6 +18,7 @@ if (isset($_POST["submit"])) {
         // Executes the query
         $stmt->execute();
 
+        // Sends the user to the main page
         header("Location: ../index.php");
     } catch (PDOException $e) {
         // Error message if the connection goes wrong

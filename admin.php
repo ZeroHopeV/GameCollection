@@ -4,6 +4,7 @@ require_once 'php_config/session.php';
 require_once 'php_config/conn.php';
 require_once 'php_config/link.php';
 
+// Checks if the user in an admin or not, sends the user to the main page if not
 if ($_SESSION["admin"] !== 1) {
     header("Location: index.php");
 }

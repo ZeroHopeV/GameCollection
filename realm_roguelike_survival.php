@@ -63,7 +63,7 @@ require_once 'php_config/link.php';
         <form method="post" action="">
             Order by:
             <select name="order">
-                <option value="deafault">Deafault</option>
+                <option value="default">Default</option>
                 <option value="username">Username</option>
                 <option value="highscore">Highscore</option>
             </select>
@@ -72,7 +72,7 @@ require_once 'php_config/link.php';
 
         <?php
         // Selects everything from roguelike_survival, including username from userinfo
-        // Connects with inner join by comparing user-id in both run_forever and userinfo to see which user-id exists in both tables/in userinfo also exists in run_forever
+        // Connects with inner join by comparing user-id in both run_forever and userinfo to see which user-id exists in both tables
         $runner_query = "SELECT roguelike_survival.*, userinfo.username 
                             FROM roguelike_survival INNER JOIN userinfo 
                             ON roguelike_survival.roguelike_survival_id = userinfo.user_id;";
@@ -80,7 +80,7 @@ require_once 'php_config/link.php';
         // Gets the relevant file for ordering the leaderboard
         require_once 'other_config/rrs_query_order.php';
 
-        // Preapres the query for improved security
+        // Prepares the query for improved security
         $runner_stmt = $pdo->prepare($runner_query);
         // Executes the query
         $runner_stmt->execute();

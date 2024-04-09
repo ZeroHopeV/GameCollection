@@ -66,7 +66,12 @@ require_once 'php_config/link.php';
             <div class="heading">
                 What kind of data are saved?
             </div>
-            <p>Mainly username, game progress, and hashed password are the data saved, nothing much</p>
+            <p>Mainly username, game progress, and hashed password are the data saved, nothing much.</p>
+
+            <div class="heading">
+                How are the games made?
+            </div>
+            <p>The tools/programs I use for game development here are GDevelop (Game engine, Built in Piksel for graphics) for functionality and FL Studio for sound and music.</p>
         </div>
     </div>
 

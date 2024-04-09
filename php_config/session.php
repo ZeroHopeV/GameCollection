@@ -4,13 +4,13 @@
 ini_set('session.use_only_cookies', 1);
 ini_set('session.use_strict_mode', 1);
 
-// Setings for session and it's security
+// Settings for session and it's security
 session_set_cookie_params([
     // Session lasts for 4 hours
     'lifetime' => 14400,
     // Secure communication between the domain-website and the server
     'domain' => '10.200.1.163',
-    // Secures evey webpage
+    // Secures every webpage
     'path' => '/',
     // Secures the use of session in a secure connection with https, but since the server uses http, it is set to false
     'secure' => false,

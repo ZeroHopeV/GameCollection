@@ -64,7 +64,7 @@ require_once 'php_config/link.php';
         <form method="post" action="">
             Order by:
             <select name="order">
-                <option value="deafault">Deafault</option>
+                <option value="default">Default</option>
                 <option value="username">Username</option>
                 <option value="easy">Easy</option>
                 <option value="normal">Normal</option>
@@ -75,7 +75,7 @@ require_once 'php_config/link.php';
 
         <?php
         // Selects everything from run_forever, including username from userinfo
-        // Connects with inner join by comparing user-id in both run_forever and userinfo to see which user-id exists in both tables/in userinfo also exists in run_forever
+        // Connects with inner join by comparing user-id in both run_forever and userinfo to see which user-id exists in both tables
         $runner_query = "SELECT run_forever.*, userinfo.username 
                             FROM run_forever INNER JOIN userinfo 
                             ON run_forever.run_forever_id = userinfo.user_id;";
@@ -83,7 +83,7 @@ require_once 'php_config/link.php';
         // Gets the relevant file for ordering the leaderboard
         require_once 'other_config/rf_query_order.php';
 
-        // Preapres the query for improved security
+        // Prepares the query for improved security
         $runner_stmt = $pdo->prepare($runner_query);
         // Executes the query
         $runner_stmt->execute();

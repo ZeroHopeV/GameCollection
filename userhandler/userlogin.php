@@ -34,6 +34,7 @@ if (isset($_POST["submit"])) {
                 // Stores username and user-id in session and sends the user to games.php
                 $_SESSION["username"] = $result["username"];
                 $_SESSION["user_id"] = $result["user_id"];
+                // For admin identification
                 $_SESSION["admin"] = $result["admin"];
                 header("Location: ../games.php");
             } else {

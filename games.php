@@ -61,6 +61,7 @@ if (isset($_POST["submit"])) {
         </form>
 
         <?php
+        // Checks if the user is an admin
         if ($_SESSION["admin"] === 1) {
             echo "<a href='admin.php'>Admin Operations</a>";
         }
