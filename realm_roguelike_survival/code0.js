@@ -19,7 +19,7 @@ gdjs.startmenuCode.GDNewTextObjects2= [];
 gdjs.startmenuCode.GDNewTextObjects3= [];
 
 
-gdjs.startmenuCode.asyncCallback24143844 = function (runtimeScene, asyncObjectsList) {
+gdjs.startmenuCode.asyncCallback24145444 = function (runtimeScene, asyncObjectsList) {
 gdjs.copyArray(runtimeScene.getObjects("NewText"), gdjs.startmenuCode.GDNewTextObjects3);
 {runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(gdjs.evtTools.common.toNumber(runtimeScene.getScene().getVariables().getFromIndex(0).getAsString()));
 }{for(var i = 0, len = gdjs.startmenuCode.GDNewTextObjects3.length ;i < len;++i) {
@@ -34,14 +34,14 @@ gdjs.startmenuCode.eventsList0 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rrs_gamedatahandler/preset.php", "", "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback24143844(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rrs_gamedatahandler/preset.php", "", "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback24145444(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.startmenuCode.asyncCallback24145956 = function (runtimeScene, asyncObjectsList) {
+};gdjs.startmenuCode.asyncCallback24147556 = function (runtimeScene, asyncObjectsList) {
 }
 gdjs.startmenuCode.eventsList1 = function(runtimeScene) {
 
@@ -51,7 +51,7 @@ gdjs.startmenuCode.eventsList1 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rrs_gamedatahandler/save.php", "highscore=" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1))), "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback24145956(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rrs_gamedatahandler/save.php", "highscore=" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1))), "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback24147556(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -166,8 +166,8 @@ for (var i = 0, k = 0, l = gdjs.startmenuCode.GDstartbuttonObjects1.length;i<l;+
 }
 gdjs.startmenuCode.GDstartbuttonObjects1.length = k;
 if (isConditionTrue_0) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "gamescene", false);
-}{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(3), true);
+{gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(3), true);
+}{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "gamescene", false);
 }}
 
 }
