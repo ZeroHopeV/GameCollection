@@ -31,6 +31,6 @@ This project is mainly a collection of games that I made that everyone can play.
 
 ### Usage and config
 
-If you want to take a deeper look at the code itself and test stuff out, you will need the database and all the files except for documentation. You can expand by using a server of your preference to host locally.
+If you want to take a deeper look at the code itself and test stuff out, you will need the database and all the relevant files. You can expand by using a server of your preference to host locally, note that the project uses MariaDB/MySQL and PHP/PDO.
 
 ![gameicon](images/favicon.png)
