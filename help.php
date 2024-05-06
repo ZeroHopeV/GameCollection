@@ -72,14 +72,14 @@ require_once 'php_config/link.php';
                 The instructions for each game is located under the game window.
                 The highscore for each game are saved in the database connected to your user.
                 There is a leaderboard at the bottom of each game page related to the game.
-                You can choose to sort/order the leaderboards by what kind of stats are available for each game.
+                You can choose to order the leaderboards by what kind of stats are available for each game.
                 This page can only be found and accessed after logging in.</p>
             <br>
 
             <div class="heading">Leaderboards</div>
             <img src="images/leaderboards.png" alt="leaderboards page" class="showcase">
             <p>Where you can see leaderboards for every game available here.
-                You can choose to sort/order the leaderboards by what kind of information are available for each game.
+                You can choose to order the leaderboards by what kind of information are available for each game.
                 Your user will be highlighted in the leaderboards if you are already logged in.</p>
             <br>
 
