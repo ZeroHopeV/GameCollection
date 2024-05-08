@@ -54,6 +54,10 @@ require_once 'php_config/link.php';
         -->
 
         <div class="center">
+            <div class="heading">Content:</div>
+            <p>User Creation, Login, General Information, 2 Videos</p>
+            <br>
+
             <div class="heading">The main page</div>
             <img src="images/mainpage.png" alt="main page" class="showcase">
             <p>The main page with info and announcements. Use the menu to navigate through different pages.</p>
@@ -91,7 +95,24 @@ require_once 'php_config/link.php';
 
             <div class="heading">Help Support</div>
             <p>This is here, where you are now.
-                Explanation and info about the different pages.</p>
+                Explanation and info about the different pages and about creating a user and logging inn.</p>
+
+            <div class="Creating a user"></div>
+            <img src="images/createuserform.png" alt="create user form" class="showcase">
+            <p>In order to create a user you need to click on "Login / Games" on the menu, then click on the button "Create a new user".
+                When you are on the correct page, input a username, password and confirm the password by inputting the same password again, and make sure they are on the correct input-fields.
+                The password does not have to be complicated, since the information stored about the user are only game information and progress.
+                Then click "Create" when you are done, and then you will end up on the Games page.
+            </p>
+            <br>
+
+            <div class="Login"></div>
+            <img src="images/loginuserform.png" alt="login form" class="showcase">
+            <p>For login, you also need to click on "Login / Games" on the menu,
+                then input the username and the password into the correct input-fields, then click "Login"
+                and then you will end up on the Games page.
+            </p>
+            <br>
         </div>
     </div>
 
