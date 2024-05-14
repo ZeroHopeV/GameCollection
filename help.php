@@ -47,16 +47,18 @@ require_once 'php_config/link.php';
     </div>
 
     <div class="box">
-        <!--
+        <p>User Creation + Login</p><br>
         <video controls>
-            <source src="#" type="video/mp4">
-        </video>
-        -->
+            <source src="videos/uservideo.mp4" type="video/mp4">
+        </video><br>
+
+        <p>Explanation + Info</p><br>
+        <video controls>
+            <source src="videos/infovideo.mp4" type="video/mp4">
+        </video><br>
+
 
         <div class="center">
-            <div class="heading">Content:</div>
-            <p>User Creation, Login, General Information, 2 Videos</p>
-            <br>
 
             <div class="heading">The main page</div>
             <img src="images/mainpage.png" alt="main page" class="showcase">

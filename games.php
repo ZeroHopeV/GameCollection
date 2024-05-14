@@ -60,6 +60,8 @@ if (isset($_POST["submit"])) {
             <button type="submit" name="submit" id="logout">Log out</button>
         </form>
 
+        <p>Use the following keys on the game window to get the latest update, if you do not get the updates automatically: Fn+Ctrl+F5 or Ctrl+F5 (Depending on your computer/keyboard)</p>
+
         <?php
         // Checks if the user is an admin
         if ($_SESSION["admin"] === 1) {
