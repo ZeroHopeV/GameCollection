@@ -134,6 +134,11 @@ iframe{
     margin: 20px;
 }
 
+video{
+    width: 500px;
+    margin: 10px;
+}
+
 .box img{
     background: #333333;
     border-radius: 5px;
