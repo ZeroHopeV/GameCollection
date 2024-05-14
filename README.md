@@ -38,4 +38,6 @@ Do watch out for complex problems that are likely to occur, for example:
 + IP-Domain Hosting (Configure correct IP-Domain)
 + Session-Cookie-Domain Configuration (Configure php.ini file, depending on your server)
 
+Take a look at the Wiki (GitHub Wiki) for examples of commands for installing Apache, PHP, MySQL/MariaDB and Git for Linux Ubuntu Server/Desktop starting setup if you need them.
+
 ![gameicon](images/favicon.png)
