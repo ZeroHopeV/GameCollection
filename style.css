@@ -259,6 +259,9 @@ textarea{
         min-width: 320px;
         min-height: 175px;
     }
+    video{
+        width: 200px;
+    }
 }
 
 @media (max-width: 600px) {
