@@ -99,7 +99,7 @@ require_once 'php_config/link.php';
             <p>This is here, where you are now.
                 Explanation and info about the different pages and about creating a user and logging inn.</p>
 
-            <div class="Creating a user"></div>
+            <div class="heading">Creating a user</div>
             <img src="images/createuserform.png" alt="create user form" class="showcase">
             <p>In order to create a user you need to click on "Login / Games" on the menu, then click on the button "Create a new user".
                 When you are on the correct page, input a username, password and confirm the password by inputting the same password again, and make sure they are on the correct input-fields.
@@ -108,7 +108,7 @@ require_once 'php_config/link.php';
             </p>
             <br>
 
-            <div class="Login"></div>
+            <div class="heading">Login</div>
             <img src="images/loginuserform.png" alt="login form" class="showcase">
             <p>For login, you also need to click on "Login / Games" on the menu,
                 then input the username and the password into the correct input-fields, then click "Login"
