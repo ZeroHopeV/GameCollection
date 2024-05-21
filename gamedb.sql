@@ -30,7 +30,7 @@ CREATE TABLE `announcement` (
   PRIMARY KEY (`id`),
   KEY `fk_announcement_userinfo1_idx` (`creator_id`),
   CONSTRAINT `fk_announcement_userinfo1` FOREIGN KEY (`creator_id`) REFERENCES `userinfo` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `announcement` (
 
 LOCK TABLES `announcement` WRITE;
 /*!40000 ALTER TABLE `announcement` DISABLE KEYS */;
-INSERT INTO `announcement` VALUES (1,1,'New game in progress...','2024-01-29 09:58:37');
+INSERT INTO `announcement` VALUES (1,1,'New game in progress...','2024-01-29 09:58:37'),(2,1,'New game mainly done, available to play','2024-05-15 09:32:42');
 /*!40000 ALTER TABLE `announcement` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `roguelike_survival` (
 
 LOCK TABLES `roguelike_survival` WRITE;
 /*!40000 ALTER TABLE `roguelike_survival` DISABLE KEYS */;
-INSERT INTO `roguelike_survival` VALUES (1,4575),(2,17);
+INSERT INTO `roguelike_survival` VALUES (1,36975),(2,43);
 /*!40000 ALTER TABLE `roguelike_survival` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +109,7 @@ CREATE TABLE `userinfo` (
   `pwd` varchar(255) NOT NULL,
   `admin` tinyint(4) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +118,7 @@ CREATE TABLE `userinfo` (
 
 LOCK TABLES `userinfo` WRITE;
 /*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
-INSERT INTO `userinfo` VALUES (1,'ZeroHopeV','$2y$10$cbj47VXGatbQqnJg/Yr7Se4sOnG2yJTtLhd84mhUuNIRFLlzO5YZS',1),(2,'testuser','$2y$10$GSroXn8s25kgJ5ewTmaU0OPOvrn8C2zHROVyqIAyzZaWaWUxlUgrm',0);
+INSERT INTO `userinfo` VALUES (1,'ZeroHopeV','$2y$10$cbj47VXGatbQqnJg/Yr7Se4sOnG2yJTtLhd84mhUuNIRFLlzO5YZS',1),(2,'testuser','$2y$10$GSroXn8s25kgJ5ewTmaU0OPOvrn8C2zHROVyqIAyzZaWaWUxlUgrm',0),(3,'ulrik','$2y$10$7.3HWrx69XjUHmUcDJfgv.Sso4gKtOYmYVqqyG.QpaCskresez/CC',0);
 /*!40000 ALTER TABLE `userinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -131,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-13 10:10:44
+-- Dump completed on 2024-05-16 11:15:56
