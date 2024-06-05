@@ -56,7 +56,7 @@ if ($_SESSION["admin"] !== 1) {
 
         <form method="post" action="other_config/insert.php">
             <textarea name="content" required></textarea><br>
-            <input type="submit" value="Submit" name="submit">
+            <button type="submit" name="submit">Submit</button>
         </form>
     </div>
 

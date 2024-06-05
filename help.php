@@ -108,7 +108,7 @@ require_once 'php_config/link.php';
             </p>
             <br>
 
-            <div class="heading">Login</div>
+            <div class="heading">Login Instructions</div>
             <img src="images/loginuserform.png" alt="login form" class="showcase">
             <p>For login, you also need to click on "Login / Games" on the menu,
                 then input the username and the password into the correct input-fields, then click "Login"
