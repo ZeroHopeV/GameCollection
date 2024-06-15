@@ -8,6 +8,11 @@ require_once 'php_config/link.php';
 if ($_SESSION["admin"] !== 1) {
     header("Location: index.php");
 }
+
+$query = "SELECT * FROM userinfo WHERE NOT user_id = 1 AND NOT user_id = :id;";
+$stmt = $pdo->prepare($query);
+$stmt->bindParam(":id", $_SESSION["user_id"]);
+$stmt->execute();
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +63,41 @@ if ($_SESSION["admin"] !== 1) {
             <textarea name="content" required></textarea><br>
             <button type="submit" name="submit">Submit</button>
         </form>
+
+        <?php
+        if ($stmt->rowCount() > 0) {
+        ?>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Admin Status</th>
+                <th>(Admin Button)</th>
+            </tr>
+            <?php
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+            <tr>
+                <td><?php echo $row["user_id"]; ?></td>
+                <td><?php echo $row["username"]; ?></td>
+                <td><?php if ($row["admin"] === 1) {echo "Admin";} else {echo "User";} ?></td>
+                <td>
+                    <form method="post" action="<?php if ($row["admin"] === 1) {echo "other_config/disable.php";} else {echo "other_config/enable.php";} ?>">
+                        <input type="hidden" name="id" value="<?php echo $row["user_id"];?>">
+                        <button type="submit" name="submit">Change admin</button>
+                    </form>
+                </td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+        <?php
+        } else {
+            echo "<p>No other users found</p>";
+        }
+        ?>
+
     </div>
 
 </div>
