@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__CurvedMovement__DuplicatedPath !== "undefined") {
 gdjs.evtsExt__CurvedMovement__DuplicatedPath = {};
 
 
-gdjs.evtsExt__CurvedMovement__DuplicatedPath.userFunc0x11068a8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__CurvedMovement__DuplicatedPath.userFunc0x120ca30 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 const createdPathName = eventsFunctionContext.getArgument("CreatedPathName");
 const sourcePathName = eventsFunctionContext.getArgument("SourcePathName");
@@ -26,7 +26,7 @@ gdjs.evtsExt__CurvedMovement__DuplicatedPath.eventsList0 = function(runtimeScene
 {
 
 
-gdjs.evtsExt__CurvedMovement__DuplicatedPath.userFunc0x11068a8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__CurvedMovement__DuplicatedPath.userFunc0x120ca30(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -41,6 +41,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("CurvedMovement"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("CurvedMovement"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

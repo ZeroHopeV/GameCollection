@@ -49,6 +49,43 @@ gdjs.evtsExt__AdvancedProjectile__AdvancedProjectile.AdvancedProjectile = class 
     return true;
   }
 
+  // Network sync:
+  getNetworkSyncData() {
+    return {
+      ...super.getNetworkSyncData(),
+      props: {
+        
+    MaxLifetime: this._behaviorData.MaxLifetime,
+    MaxDistanceFromStartingPosition: this._behaviorData.MaxDistanceFromStartingPosition,
+    MaxSpeed: this._behaviorData.MaxSpeed,
+    MinSpeed: this._behaviorData.MinSpeed,
+    Acceleration: this._behaviorData.Acceleration,
+    StartingSpeed: this._behaviorData.StartingSpeed,
+    DeleteWhenLifetimeExceeded: this._behaviorData.DeleteWhenLifetimeExceeded,
+    DeleteWhenDistanceExceeded: this._behaviorData.DeleteWhenDistanceExceeded,
+      }
+    };
+  }
+  updateFromNetworkSyncData(networkSyncData) {
+    
+    if (networkSyncData.props.MaxLifetime !== undefined)
+      this._behaviorData.MaxLifetime = networkSyncData.props.MaxLifetime;
+    if (networkSyncData.props.MaxDistanceFromStartingPosition !== undefined)
+      this._behaviorData.MaxDistanceFromStartingPosition = networkSyncData.props.MaxDistanceFromStartingPosition;
+    if (networkSyncData.props.MaxSpeed !== undefined)
+      this._behaviorData.MaxSpeed = networkSyncData.props.MaxSpeed;
+    if (networkSyncData.props.MinSpeed !== undefined)
+      this._behaviorData.MinSpeed = networkSyncData.props.MinSpeed;
+    if (networkSyncData.props.Acceleration !== undefined)
+      this._behaviorData.Acceleration = networkSyncData.props.Acceleration;
+    if (networkSyncData.props.StartingSpeed !== undefined)
+      this._behaviorData.StartingSpeed = networkSyncData.props.StartingSpeed;
+    if (networkSyncData.props.DeleteWhenLifetimeExceeded !== undefined)
+      this._behaviorData.DeleteWhenLifetimeExceeded = networkSyncData.props.DeleteWhenLifetimeExceeded;
+    if (networkSyncData.props.DeleteWhenDistanceExceeded !== undefined)
+      this._behaviorData.DeleteWhenDistanceExceeded = networkSyncData.props.DeleteWhenDistanceExceeded;
+  }
+
   // Properties:
   
   _getMaxLifetime() {
@@ -680,6 +717,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -793,6 +833,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -910,6 +953,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -996,6 +1042,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1085,6 +1134,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1175,6 +1227,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1261,6 +1316,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1350,6 +1408,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1443,6 +1504,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1529,6 +1593,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1618,6 +1685,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1705,6 +1775,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1794,6 +1867,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1881,6 +1957,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1970,6 +2049,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2057,6 +2139,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2146,6 +2231,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2242,6 +2330,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2351,6 +2442,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2447,6 +2541,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2556,6 +2653,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

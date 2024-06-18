@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__CurvedMovement__TargetX !== "undefined") {
 gdjs.evtsExt__CurvedMovement__TargetX = {};
 
 
-gdjs.evtsExt__CurvedMovement__TargetX.userFunc0x10995d0 = function GDJSInlineCode(runtimeScene, objects, eventsFunctionContext) {
+gdjs.evtsExt__CurvedMovement__TargetX.userFunc0x15a6478 = function GDJSInlineCode(runtimeScene, objects, eventsFunctionContext) {
 "use strict";
 
 const pathName = eventsFunctionContext.getArgument("PathName");
@@ -29,7 +29,7 @@ gdjs.evtsExt__CurvedMovement__TargetX.eventsList0 = function(runtimeScene, event
 
 
 var objects = [];
-gdjs.evtsExt__CurvedMovement__TargetX.userFunc0x10995d0(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__CurvedMovement__TargetX.userFunc0x15a6478(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -44,6 +44,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("CurvedMovement"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("CurvedMovement"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

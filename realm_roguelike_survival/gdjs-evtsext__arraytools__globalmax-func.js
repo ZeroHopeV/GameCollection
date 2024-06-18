@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__GlobalMax !== "undefined") {
 gdjs.evtsExt__ArrayTools__GlobalMax = {};
 
 
-gdjs.evtsExt__ArrayTools__GlobalMax.userFunc0x1489668 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__GlobalMax.userFunc0x11e5870 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable[]} */
 const internalArray = eventsFunctionContext.getArgument("Array").getAllChildrenArray();
@@ -39,7 +39,7 @@ gdjs.evtsExt__ArrayTools__GlobalMax.eventsList0 = function(runtimeScene, eventsF
 {
 
 
-gdjs.evtsExt__ArrayTools__GlobalMax.userFunc0x1489668(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__GlobalMax.userFunc0x11e5870(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -54,6 +54,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ArrayTools"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ArrayTools"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

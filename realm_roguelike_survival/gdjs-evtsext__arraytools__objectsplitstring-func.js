@@ -9,7 +9,7 @@ gdjs.evtsExt__ArrayTools__ObjectSplitString = {};
 gdjs.evtsExt__ArrayTools__ObjectSplitString.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__ArrayTools__ObjectSplitString.userFunc0x1406810 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__ObjectSplitString.userFunc0x144dc10 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -29,7 +29,7 @@ gdjs.evtsExt__ArrayTools__ObjectSplitString.eventsList0 = function(runtimeScene,
 {
 
 
-gdjs.evtsExt__ArrayTools__ObjectSplitString.userFunc0x1406810(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__ObjectSplitString.userFunc0x144dc10(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -46,6 +46,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ArrayTools"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ArrayTools"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

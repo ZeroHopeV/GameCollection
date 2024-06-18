@@ -211,6 +211,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "PathfindingBehavior": PathfindingBehavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("DungeonGenerator"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("DungeonGenerator"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

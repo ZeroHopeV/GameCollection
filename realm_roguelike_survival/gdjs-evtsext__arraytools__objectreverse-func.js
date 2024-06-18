@@ -9,7 +9,7 @@ gdjs.evtsExt__ArrayTools__ObjectReverse = {};
 gdjs.evtsExt__ArrayTools__ObjectReverse.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__ArrayTools__ObjectReverse.userFunc0x14094d0 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__ObjectReverse.userFunc0x144a8b8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -25,7 +25,7 @@ gdjs.evtsExt__ArrayTools__ObjectReverse.eventsList0 = function(runtimeScene, eve
 {
 
 
-gdjs.evtsExt__ArrayTools__ObjectReverse.userFunc0x14094d0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__ObjectReverse.userFunc0x144a8b8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -42,6 +42,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ArrayTools"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ArrayTools"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

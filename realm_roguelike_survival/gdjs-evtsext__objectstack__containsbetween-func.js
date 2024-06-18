@@ -10,7 +10,7 @@ gdjs.evtsExt__ObjectStack__ContainsBetween.GDObjectObjects1= [];
 gdjs.evtsExt__ObjectStack__ContainsBetween.GDElementObjects1= [];
 
 
-gdjs.evtsExt__ObjectStack__ContainsBetween.userFunc0xa31fa8 = function GDJSInlineCode(runtimeScene, objects, eventsFunctionContext) {
+gdjs.evtsExt__ObjectStack__ContainsBetween.userFunc0x9ae720 = function GDJSInlineCode(runtimeScene, objects, eventsFunctionContext) {
 "use strict";
 const stackBehaviorName = eventsFunctionContext.getBehaviorName("Behavior");
 /** @type {Hashtable<gdjs.RuntimeObject[]>} */
@@ -38,7 +38,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__ObjectS
 
 var objects = [];
 objects.push.apply(objects,gdjs.evtsExt__ObjectStack__ContainsBetween.GDObjectObjects1);
-gdjs.evtsExt__ObjectStack__ContainsBetween.userFunc0xa31fa8(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ObjectStack__ContainsBetween.userFunc0x9ae720(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -58,6 +58,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectStack"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectStack"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

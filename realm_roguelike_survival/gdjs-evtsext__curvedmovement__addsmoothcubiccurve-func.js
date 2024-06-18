@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__CurvedMovement__AddSmoothCubicCurve !== "undefined") {
 gdjs.evtsExt__CurvedMovement__AddSmoothCubicCurve = {};
 
 
-gdjs.evtsExt__CurvedMovement__AddSmoothCubicCurve.userFunc0x1596b98 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__CurvedMovement__AddSmoothCubicCurve.userFunc0x120ca30 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 const pathName = eventsFunctionContext.getArgument("PathName");
 /** @type {Map<string, gdjs.__curvedMovementExtension.CurvedPath>} */
@@ -40,7 +40,7 @@ gdjs.evtsExt__CurvedMovement__AddSmoothCubicCurve.eventsList0 = function(runtime
 {
 
 
-gdjs.evtsExt__CurvedMovement__AddSmoothCubicCurve.userFunc0x1596b98(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__CurvedMovement__AddSmoothCubicCurve.userFunc0x120ca30(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -55,6 +55,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("CurvedMovement"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("CurvedMovement"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

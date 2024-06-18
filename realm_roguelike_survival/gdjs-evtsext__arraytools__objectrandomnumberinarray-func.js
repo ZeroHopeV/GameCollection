@@ -9,7 +9,7 @@ gdjs.evtsExt__ArrayTools__ObjectRandomNumberInArray = {};
 gdjs.evtsExt__ArrayTools__ObjectRandomNumberInArray.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__ArrayTools__ObjectRandomNumberInArray.userFunc0x1164ea8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__ObjectRandomNumberInArray.userFunc0x11713d8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -25,7 +25,7 @@ gdjs.evtsExt__ArrayTools__ObjectRandomNumberInArray.eventsList0 = function(runti
 {
 
 
-gdjs.evtsExt__ArrayTools__ObjectRandomNumberInArray.userFunc0x1164ea8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__ObjectRandomNumberInArray.userFunc0x11713d8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -42,6 +42,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ArrayTools"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ArrayTools"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

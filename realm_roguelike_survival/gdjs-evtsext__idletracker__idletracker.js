@@ -43,6 +43,37 @@ gdjs.evtsExt__IdleTracker__IdleTracker.IdleTracker = class IdleTracker extends g
     return true;
   }
 
+  // Network sync:
+  getNetworkSyncData() {
+    return {
+      ...super.getNetworkSyncData(),
+      props: {
+        
+    LastX: this._behaviorData.LastX,
+    LastY: this._behaviorData.LastY,
+    IsFarFromLastPosition: this._behaviorData.IsFarFromLastPosition,
+    DurationBeforeIdle: this._behaviorData.DurationBeforeIdle,
+    IdleDistanceTolerance: this._behaviorData.IdleDistanceTolerance,
+    IdleTime: this._behaviorData.IdleTime,
+      }
+    };
+  }
+  updateFromNetworkSyncData(networkSyncData) {
+    
+    if (networkSyncData.props.LastX !== undefined)
+      this._behaviorData.LastX = networkSyncData.props.LastX;
+    if (networkSyncData.props.LastY !== undefined)
+      this._behaviorData.LastY = networkSyncData.props.LastY;
+    if (networkSyncData.props.IsFarFromLastPosition !== undefined)
+      this._behaviorData.IsFarFromLastPosition = networkSyncData.props.IsFarFromLastPosition;
+    if (networkSyncData.props.DurationBeforeIdle !== undefined)
+      this._behaviorData.DurationBeforeIdle = networkSyncData.props.DurationBeforeIdle;
+    if (networkSyncData.props.IdleDistanceTolerance !== undefined)
+      this._behaviorData.IdleDistanceTolerance = networkSyncData.props.IdleDistanceTolerance;
+    if (networkSyncData.props.IdleTime !== undefined)
+      this._behaviorData.IdleTime = networkSyncData.props.IdleTime;
+  }
+
   // Properties:
   
   _getLastX() {
@@ -213,6 +244,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("IdleTracker"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("IdleTracker"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -305,6 +339,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("IdleTracker"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("IdleTracker"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -400,6 +437,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("IdleTracker"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("IdleTracker"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -495,6 +535,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("IdleTracker"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("IdleTracker"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

@@ -34,6 +34,28 @@ gdjs.evtsExt__Flash__Flash.Flash = class Flash extends gdjs.RuntimeBehavior {
     return true;
   }
 
+  // Network sync:
+  getNetworkSyncData() {
+    return {
+      ...super.getNetworkSyncData(),
+      props: {
+        
+    HalfPeriodTime: this._behaviorData.HalfPeriodTime,
+    IsFlashing: this._behaviorData.IsFlashing,
+    FlashDuration: this._behaviorData.FlashDuration,
+      }
+    };
+  }
+  updateFromNetworkSyncData(networkSyncData) {
+    
+    if (networkSyncData.props.HalfPeriodTime !== undefined)
+      this._behaviorData.HalfPeriodTime = networkSyncData.props.HalfPeriodTime;
+    if (networkSyncData.props.IsFlashing !== undefined)
+      this._behaviorData.IsFlashing = networkSyncData.props.IsFlashing;
+    if (networkSyncData.props.FlashDuration !== undefined)
+      this._behaviorData.FlashDuration = networkSyncData.props.FlashDuration;
+  }
+
   // Properties:
   
   _getHalfPeriodTime() {
@@ -216,6 +238,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Flash"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Flash"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -338,6 +363,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Flash"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Flash"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -444,6 +472,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Flash"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Flash"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -533,6 +564,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Flash"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Flash"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -641,6 +675,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Flash"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Flash"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -727,6 +764,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Flash"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Flash"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -816,6 +856,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Flash"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Flash"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

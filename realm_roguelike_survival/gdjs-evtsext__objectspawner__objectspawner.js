@@ -52,6 +52,46 @@ gdjs.evtsExt__ObjectSpawner__ObjectSpawner.ObjectSpawner = class ObjectSpawner e
     return true;
   }
 
+  // Network sync:
+  getNetworkSyncData() {
+    return {
+      ...super.getNetworkSyncData(),
+      props: {
+        
+    SpawnPeriod: this._behaviorData.SpawnPeriod,
+    OffsetX: this._behaviorData.OffsetX,
+    OffsetY: this._behaviorData.OffsetY,
+    JustSpawnedAnObject: this._behaviorData.JustSpawnedAnObject,
+    MaxQuantityReached: this._behaviorData.MaxQuantityReached,
+    MaxQuantity: this._behaviorData.MaxQuantity,
+    SpawnerCapacity: this._behaviorData.SpawnerCapacity,
+    UnlimitedCapacity: this._behaviorData.UnlimitedCapacity,
+    RandomPosition: this._behaviorData.RandomPosition,
+      }
+    };
+  }
+  updateFromNetworkSyncData(networkSyncData) {
+    
+    if (networkSyncData.props.SpawnPeriod !== undefined)
+      this._behaviorData.SpawnPeriod = networkSyncData.props.SpawnPeriod;
+    if (networkSyncData.props.OffsetX !== undefined)
+      this._behaviorData.OffsetX = networkSyncData.props.OffsetX;
+    if (networkSyncData.props.OffsetY !== undefined)
+      this._behaviorData.OffsetY = networkSyncData.props.OffsetY;
+    if (networkSyncData.props.JustSpawnedAnObject !== undefined)
+      this._behaviorData.JustSpawnedAnObject = networkSyncData.props.JustSpawnedAnObject;
+    if (networkSyncData.props.MaxQuantityReached !== undefined)
+      this._behaviorData.MaxQuantityReached = networkSyncData.props.MaxQuantityReached;
+    if (networkSyncData.props.MaxQuantity !== undefined)
+      this._behaviorData.MaxQuantity = networkSyncData.props.MaxQuantity;
+    if (networkSyncData.props.SpawnerCapacity !== undefined)
+      this._behaviorData.SpawnerCapacity = networkSyncData.props.SpawnerCapacity;
+    if (networkSyncData.props.UnlimitedCapacity !== undefined)
+      this._behaviorData.UnlimitedCapacity = networkSyncData.props.UnlimitedCapacity;
+    if (networkSyncData.props.RandomPosition !== undefined)
+      this._behaviorData.RandomPosition = networkSyncData.props.RandomPosition;
+  }
+
   // Properties:
   
   _getSpawnPeriod() {
@@ -187,6 +227,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -276,6 +319,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -365,6 +411,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -450,7 +499,7 @@ isConditionTrue_0 = false;
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(24466900);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(24610660);
 }
 }
 if (isConditionTrue_0) {
@@ -831,6 +880,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -924,6 +976,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1014,6 +1069,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1104,6 +1162,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1191,6 +1252,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1278,6 +1342,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1365,6 +1432,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1454,6 +1524,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1621,6 +1694,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1716,6 +1792,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1802,6 +1881,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1891,6 +1973,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1987,6 +2072,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2096,6 +2184,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2183,6 +2274,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2272,6 +2366,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2368,6 +2465,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2477,6 +2577,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectSpawner"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectSpawner"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

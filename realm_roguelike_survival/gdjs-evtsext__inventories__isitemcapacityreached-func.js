@@ -36,6 +36,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Inventories"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Inventories"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

@@ -9,7 +9,7 @@ gdjs.evtsExt__ArrayTools__ObjectMedian = {};
 gdjs.evtsExt__ArrayTools__ObjectMedian.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__ArrayTools__ObjectMedian.userFunc0x1406810 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__ObjectMedian.userFunc0x141b5c8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable[]} */
 const internalArray = eventsFunctionContext.getArgument("Array").getAllChildrenArray();
@@ -32,7 +32,7 @@ gdjs.evtsExt__ArrayTools__ObjectMedian.eventsList0 = function(runtimeScene, even
 {
 
 
-gdjs.evtsExt__ArrayTools__ObjectMedian.userFunc0x1406810(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__ObjectMedian.userFunc0x141b5c8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -49,6 +49,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ArrayTools"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ArrayTools"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

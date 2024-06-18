@@ -97,6 +97,91 @@ gdjs.evtsExt__Health__Health.Health = class Health extends gdjs.RuntimeBehavior 
     return true;
   }
 
+  // Network sync:
+  getNetworkSyncData() {
+    return {
+      ...super.getNetworkSyncData(),
+      props: {
+        
+    Health: this._behaviorData.Health,
+    CurrentHealth: this._behaviorData.CurrentHealth,
+    MaxHealth: this._behaviorData.MaxHealth,
+    DamageCooldown: this._behaviorData.DamageCooldown,
+    IsHealthJustDamaged: this._behaviorData.IsHealthJustDamaged,
+    HealthRegenRate: this._behaviorData.HealthRegenRate,
+    HealthRegenDelay: this._behaviorData.HealthRegenDelay,
+    AllowOverHealing: this._behaviorData.AllowOverHealing,
+    HitAtLeastOnce: this._behaviorData.HitAtLeastOnce,
+    IsJustHealed: this._behaviorData.IsJustHealed,
+    CurrentShieldPoints: this._behaviorData.CurrentShieldPoints,
+    MaxShieldPoints: this._behaviorData.MaxShieldPoints,
+    ShieldDuration: this._behaviorData.ShieldDuration,
+    ShieldRegenRate: this._behaviorData.ShieldRegenRate,
+    BlockExcessDamage: this._behaviorData.BlockExcessDamage,
+    ShieldRegenDelay: this._behaviorData.ShieldRegenDelay,
+    IsShieldJustDamaged: this._behaviorData.IsShieldJustDamaged,
+    ChanceToDodge: this._behaviorData.ChanceToDodge,
+    DamageToBeApplied: this._behaviorData.DamageToBeApplied,
+    FlatDamageReduction: this._behaviorData.FlatDamageReduction,
+    PercentDamageReduction: this._behaviorData.PercentDamageReduction,
+    IsJustDodged: this._behaviorData.IsJustDodged,
+    ShieldDamageTaken: this._behaviorData.ShieldDamageTaken,
+    HealToBeApplied: this._behaviorData.HealToBeApplied,
+      }
+    };
+  }
+  updateFromNetworkSyncData(networkSyncData) {
+    
+    if (networkSyncData.props.Health !== undefined)
+      this._behaviorData.Health = networkSyncData.props.Health;
+    if (networkSyncData.props.CurrentHealth !== undefined)
+      this._behaviorData.CurrentHealth = networkSyncData.props.CurrentHealth;
+    if (networkSyncData.props.MaxHealth !== undefined)
+      this._behaviorData.MaxHealth = networkSyncData.props.MaxHealth;
+    if (networkSyncData.props.DamageCooldown !== undefined)
+      this._behaviorData.DamageCooldown = networkSyncData.props.DamageCooldown;
+    if (networkSyncData.props.IsHealthJustDamaged !== undefined)
+      this._behaviorData.IsHealthJustDamaged = networkSyncData.props.IsHealthJustDamaged;
+    if (networkSyncData.props.HealthRegenRate !== undefined)
+      this._behaviorData.HealthRegenRate = networkSyncData.props.HealthRegenRate;
+    if (networkSyncData.props.HealthRegenDelay !== undefined)
+      this._behaviorData.HealthRegenDelay = networkSyncData.props.HealthRegenDelay;
+    if (networkSyncData.props.AllowOverHealing !== undefined)
+      this._behaviorData.AllowOverHealing = networkSyncData.props.AllowOverHealing;
+    if (networkSyncData.props.HitAtLeastOnce !== undefined)
+      this._behaviorData.HitAtLeastOnce = networkSyncData.props.HitAtLeastOnce;
+    if (networkSyncData.props.IsJustHealed !== undefined)
+      this._behaviorData.IsJustHealed = networkSyncData.props.IsJustHealed;
+    if (networkSyncData.props.CurrentShieldPoints !== undefined)
+      this._behaviorData.CurrentShieldPoints = networkSyncData.props.CurrentShieldPoints;
+    if (networkSyncData.props.MaxShieldPoints !== undefined)
+      this._behaviorData.MaxShieldPoints = networkSyncData.props.MaxShieldPoints;
+    if (networkSyncData.props.ShieldDuration !== undefined)
+      this._behaviorData.ShieldDuration = networkSyncData.props.ShieldDuration;
+    if (networkSyncData.props.ShieldRegenRate !== undefined)
+      this._behaviorData.ShieldRegenRate = networkSyncData.props.ShieldRegenRate;
+    if (networkSyncData.props.BlockExcessDamage !== undefined)
+      this._behaviorData.BlockExcessDamage = networkSyncData.props.BlockExcessDamage;
+    if (networkSyncData.props.ShieldRegenDelay !== undefined)
+      this._behaviorData.ShieldRegenDelay = networkSyncData.props.ShieldRegenDelay;
+    if (networkSyncData.props.IsShieldJustDamaged !== undefined)
+      this._behaviorData.IsShieldJustDamaged = networkSyncData.props.IsShieldJustDamaged;
+    if (networkSyncData.props.ChanceToDodge !== undefined)
+      this._behaviorData.ChanceToDodge = networkSyncData.props.ChanceToDodge;
+    if (networkSyncData.props.DamageToBeApplied !== undefined)
+      this._behaviorData.DamageToBeApplied = networkSyncData.props.DamageToBeApplied;
+    if (networkSyncData.props.FlatDamageReduction !== undefined)
+      this._behaviorData.FlatDamageReduction = networkSyncData.props.FlatDamageReduction;
+    if (networkSyncData.props.PercentDamageReduction !== undefined)
+      this._behaviorData.PercentDamageReduction = networkSyncData.props.PercentDamageReduction;
+    if (networkSyncData.props.IsJustDodged !== undefined)
+      this._behaviorData.IsJustDodged = networkSyncData.props.IsJustDodged;
+    if (networkSyncData.props.ShieldDamageTaken !== undefined)
+      this._behaviorData.ShieldDamageTaken = networkSyncData.props.ShieldDamageTaken;
+    if (networkSyncData.props.HealToBeApplied !== undefined)
+      this._behaviorData.HealToBeApplied = networkSyncData.props.HealToBeApplied;
+  }
+
   // Properties:
   
   _getHealth() {
@@ -334,6 +419,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -664,7 +752,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__Health__Health.Health.prototype.doStepP
 gdjs.evtsExt__Health__Health.Health.prototype.doStepPreEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(24801012);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(24953348);
 }
 }
 if (isConditionTrue_0) {
@@ -751,6 +839,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1277,6 +1368,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1368,6 +1462,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1488,6 +1585,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1578,6 +1678,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1779,6 +1882,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1867,6 +1973,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1987,6 +2096,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2077,6 +2189,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2164,6 +2279,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2253,6 +2371,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2343,6 +2464,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2430,6 +2554,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2519,6 +2646,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2609,6 +2739,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2696,6 +2829,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2785,6 +2921,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2875,6 +3014,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2962,6 +3104,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3051,6 +3196,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3141,6 +3289,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3228,6 +3379,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3317,6 +3471,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3407,6 +3564,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3494,6 +3654,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3583,6 +3746,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3673,6 +3839,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3780,6 +3949,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3887,6 +4059,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3994,6 +4169,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4115,6 +4293,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4227,6 +4408,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4332,6 +4516,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4437,6 +4624,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4564,6 +4754,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4670,6 +4863,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4775,6 +4971,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4861,6 +5060,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4947,6 +5149,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5033,6 +5238,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5122,6 +5330,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5212,6 +5423,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5302,6 +5516,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5389,6 +5606,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5478,6 +5698,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5568,6 +5791,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5655,6 +5881,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5744,6 +5973,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5834,6 +6066,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5921,6 +6156,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6010,6 +6248,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6100,6 +6341,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6187,6 +6431,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6276,6 +6523,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6366,6 +6616,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6456,6 +6709,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6586,6 +6842,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6694,6 +6953,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6800,6 +7062,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6905,6 +7170,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7082,6 +7350,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7189,6 +7460,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7275,6 +7549,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7361,6 +7638,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Health"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Health"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

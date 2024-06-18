@@ -373,6 +373,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -545,6 +548,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -747,7 +753,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PanelSpriteContinuousBar__PanelSpriteCo
 gdjs.evtsExt__PanelSpriteContinuousBar__PanelSpriteContinuousBar.PanelSpriteContinuousBar.prototype.doStepPostEventsContext.GDObjectObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(24613948);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(24761220);
 }
 }
 if (isConditionTrue_0) {
@@ -844,6 +850,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1018,6 +1027,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1134,6 +1146,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1343,6 +1358,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1460,6 +1478,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1586,6 +1607,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1712,6 +1736,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1837,6 +1864,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1953,6 +1983,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2106,6 +2139,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2232,6 +2268,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2349,6 +2388,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2466,6 +2508,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2591,6 +2636,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2738,6 +2786,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2859,6 +2910,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("PanelSpriteContinuousBar"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("PanelSpriteContinuousBar"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

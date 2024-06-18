@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ObjectStack__DefineHelperClasses !== "undefined") {
 gdjs.evtsExt__ObjectStack__DefineHelperClasses = {};
 
 
-gdjs.evtsExt__ObjectStack__DefineHelperClasses.userFunc0xa31fa8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ObjectStack__DefineHelperClasses.userFunc0x9ae720 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 if (gdjs._objectStackExtension) {
     return;
@@ -185,7 +185,7 @@ gdjs.evtsExt__ObjectStack__DefineHelperClasses.eventsList0 = function(runtimeSce
 {
 
 
-gdjs.evtsExt__ObjectStack__DefineHelperClasses.userFunc0xa31fa8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ObjectStack__DefineHelperClasses.userFunc0x9ae720(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -200,6 +200,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ObjectStack"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ObjectStack"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

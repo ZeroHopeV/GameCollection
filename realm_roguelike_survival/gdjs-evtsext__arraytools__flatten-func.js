@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__Flatten !== "undefined") {
 gdjs.evtsExt__ArrayTools__Flatten = {};
 
 
-gdjs.evtsExt__ArrayTools__Flatten.userFunc0x119fb20 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__Flatten.userFunc0x96d008 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -40,7 +40,7 @@ gdjs.evtsExt__ArrayTools__Flatten.eventsList0 = function(runtimeScene, eventsFun
 {
 
 
-gdjs.evtsExt__ArrayTools__Flatten.userFunc0x119fb20(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__Flatten.userFunc0x96d008(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -55,6 +55,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ArrayTools"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ArrayTools"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

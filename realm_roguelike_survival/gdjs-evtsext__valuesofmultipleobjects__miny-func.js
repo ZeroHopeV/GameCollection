@@ -9,7 +9,7 @@ gdjs.evtsExt__ValuesOfMultipleObjects__MinY = {};
 gdjs.evtsExt__ValuesOfMultipleObjects__MinY.GDobjectsObjects1= [];
 
 
-gdjs.evtsExt__ValuesOfMultipleObjects__MinY.userFunc0x1021ce8 = function GDJSInlineCode(runtimeScene, objects, eventsFunctionContext) {
+gdjs.evtsExt__ValuesOfMultipleObjects__MinY.userFunc0x1606d28 = function GDJSInlineCode(runtimeScene, objects, eventsFunctionContext) {
 "use strict";
 // If the instances doesn't exist we exit this function, returnValue will be 0
 if (objects.length == 0) return;
@@ -35,7 +35,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("objects"), gdjs.evtsExt__Values
 
 var objects = [];
 objects.push.apply(objects,gdjs.evtsExt__ValuesOfMultipleObjects__MinY.GDobjectsObjects1);
-gdjs.evtsExt__ValuesOfMultipleObjects__MinY.userFunc0x1021ce8(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ValuesOfMultipleObjects__MinY.userFunc0x1606d28(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -52,6 +52,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ValuesOfMultipleObjects"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ValuesOfMultipleObjects"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

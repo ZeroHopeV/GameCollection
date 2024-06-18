@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__Shift !== "undefined") {
 gdjs.evtsExt__ArrayTools__Shift = {};
 
 
-gdjs.evtsExt__ArrayTools__Shift.userFunc0x12d25b0 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__Shift.userFunc0x96d008 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -26,7 +26,7 @@ gdjs.evtsExt__ArrayTools__Shift.eventsList0 = function(runtimeScene, eventsFunct
 {
 
 
-gdjs.evtsExt__ArrayTools__Shift.userFunc0x12d25b0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__Shift.userFunc0x96d008(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -41,6 +41,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ArrayTools"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ArrayTools"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

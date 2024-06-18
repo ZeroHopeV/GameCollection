@@ -1,4 +1,5 @@
 gdjs.startmenuCode = {};
+gdjs.startmenuCode.localVariables = [];
 gdjs.startmenuCode.GDmaintextObjects1= [];
 gdjs.startmenuCode.GDmaintextObjects2= [];
 gdjs.startmenuCode.GDmaintextObjects3= [];
@@ -19,7 +20,8 @@ gdjs.startmenuCode.GDNewTextObjects2= [];
 gdjs.startmenuCode.GDNewTextObjects3= [];
 
 
-gdjs.startmenuCode.asyncCallback25128516 = function (runtimeScene, asyncObjectsList) {
+gdjs.startmenuCode.asyncCallback25285556 = function (runtimeScene, asyncObjectsList) {
+asyncObjectsList.restoreLocalVariablesContainers(gdjs.startmenuCode.localVariables);
 gdjs.copyArray(runtimeScene.getObjects("NewText"), gdjs.startmenuCode.GDNewTextObjects3);
 {runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(gdjs.evtTools.common.toNumber(runtimeScene.getScene().getVariables().getFromIndex(0).getAsString()));
 }{for(var i = 0, len = gdjs.startmenuCode.GDNewTextObjects3.length ;i < len;++i) {
@@ -34,14 +36,16 @@ gdjs.startmenuCode.eventsList0 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rrs_gamedatahandler/preset.php", "", "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback25128516(runtimeScene, asyncObjectsList)));
+asyncObjectsList.backupLocalVariablesContainers(gdjs.startmenuCode.localVariables);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rrs_gamedatahandler/preset.php", "", "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback25285556(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.startmenuCode.asyncCallback25130628 = function (runtimeScene, asyncObjectsList) {
+};gdjs.startmenuCode.asyncCallback25287676 = function (runtimeScene, asyncObjectsList) {
+asyncObjectsList.restoreLocalVariablesContainers(gdjs.startmenuCode.localVariables);
 }
 gdjs.startmenuCode.eventsList1 = function(runtimeScene) {
 
@@ -51,7 +55,8 @@ gdjs.startmenuCode.eventsList1 = function(runtimeScene) {
 {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rrs_gamedatahandler/save.php", "highscore=" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1))), "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback25130628(runtimeScene, asyncObjectsList)));
+asyncObjectsList.backupLocalVariablesContainers(gdjs.startmenuCode.localVariables);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://10.200.1.163/GameCollection/rrs_gamedatahandler/save.php", "highscore=" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1))), "POST", "", runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(1)), (runtimeScene) => (gdjs.startmenuCode.asyncCallback25287676(runtimeScene, asyncObjectsList)));
 }
 }
 

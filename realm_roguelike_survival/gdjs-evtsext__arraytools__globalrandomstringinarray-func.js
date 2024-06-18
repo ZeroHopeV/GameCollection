@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__ArrayTools__GlobalRandomStringInArray !== "undefined") 
 gdjs.evtsExt__ArrayTools__GlobalRandomStringInArray = {};
 
 
-gdjs.evtsExt__ArrayTools__GlobalRandomStringInArray.userFunc0x12d25b0 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__GlobalRandomStringInArray.userFunc0x13226f0 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -24,7 +24,7 @@ gdjs.evtsExt__ArrayTools__GlobalRandomStringInArray.eventsList0 = function(runti
 {
 
 
-gdjs.evtsExt__ArrayTools__GlobalRandomStringInArray.userFunc0x12d25b0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__ArrayTools__GlobalRandomStringInArray.userFunc0x13226f0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -39,6 +39,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("ArrayTools"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("ArrayTools"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

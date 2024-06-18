@@ -63,6 +63,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("OrbitingObjects"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("OrbitingObjects"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

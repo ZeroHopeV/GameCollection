@@ -184,6 +184,9 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("HomingProjectile"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("HomingProjectile"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },

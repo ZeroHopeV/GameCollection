@@ -103,6 +103,97 @@ gdjs.evtsExt__FireBullet__FireBullet.FireBullet = class FireBullet extends gdjs.
     return true;
   }
 
+  // Network sync:
+  getNetworkSyncData() {
+    return {
+      ...super.getNetworkSyncData(),
+      props: {
+        
+    FireCooldown: this._behaviorData.FireCooldown,
+    HasJustFired: this._behaviorData.HasJustFired,
+    FiringArc: this._behaviorData.FiringArc,
+    BulletQuantity: this._behaviorData.BulletQuantity,
+    AngleVariance: this._behaviorData.AngleVariance,
+    RotateBullet: this._behaviorData.RotateBullet,
+    AmmoQuantity: this._behaviorData.AmmoQuantity,
+    ShotsPerReload: this._behaviorData.ShotsPerReload,
+    ReloadDuration: this._behaviorData.ReloadDuration,
+    MaxAmmo: this._behaviorData.MaxAmmo,
+    ShotsBeforeNextReload: this._behaviorData.ShotsBeforeNextReload,
+    TotalShotsFired: this._behaviorData.TotalShotsFired,
+    TotalBulletsCreated: this._behaviorData.TotalBulletsCreated,
+    StartingAmmo: this._behaviorData.StartingAmmo,
+    TotalReloadsCompleted: this._behaviorData.TotalReloadsCompleted,
+    UnlimitedAmmo: this._behaviorData.UnlimitedAmmo,
+    ReloadInProgress: this._behaviorData.ReloadInProgress,
+    HeatIncreasePerShot: this._behaviorData.HeatIncreasePerShot,
+    HeatLevel: this._behaviorData.HeatLevel,
+    AutomaticReloading: this._behaviorData.AutomaticReloading,
+    OverheatDuration: this._behaviorData.OverheatDuration,
+    LinearCoolingRate: this._behaviorData.LinearCoolingRate,
+    ExponentialCoolingRate: this._behaviorData.ExponentialCoolingRate,
+    BulletLayer: this._behaviorData.BulletLayer,
+    RandomizedAngle: this._behaviorData.RandomizedAngle,
+    BulletSpeedVariance: this._behaviorData.BulletSpeedVariance,
+      }
+    };
+  }
+  updateFromNetworkSyncData(networkSyncData) {
+    
+    if (networkSyncData.props.FireCooldown !== undefined)
+      this._behaviorData.FireCooldown = networkSyncData.props.FireCooldown;
+    if (networkSyncData.props.HasJustFired !== undefined)
+      this._behaviorData.HasJustFired = networkSyncData.props.HasJustFired;
+    if (networkSyncData.props.FiringArc !== undefined)
+      this._behaviorData.FiringArc = networkSyncData.props.FiringArc;
+    if (networkSyncData.props.BulletQuantity !== undefined)
+      this._behaviorData.BulletQuantity = networkSyncData.props.BulletQuantity;
+    if (networkSyncData.props.AngleVariance !== undefined)
+      this._behaviorData.AngleVariance = networkSyncData.props.AngleVariance;
+    if (networkSyncData.props.RotateBullet !== undefined)
+      this._behaviorData.RotateBullet = networkSyncData.props.RotateBullet;
+    if (networkSyncData.props.AmmoQuantity !== undefined)
+      this._behaviorData.AmmoQuantity = networkSyncData.props.AmmoQuantity;
+    if (networkSyncData.props.ShotsPerReload !== undefined)
+      this._behaviorData.ShotsPerReload = networkSyncData.props.ShotsPerReload;
+    if (networkSyncData.props.ReloadDuration !== undefined)
+      this._behaviorData.ReloadDuration = networkSyncData.props.ReloadDuration;
+    if (networkSyncData.props.MaxAmmo !== undefined)
+      this._behaviorData.MaxAmmo = networkSyncData.props.MaxAmmo;
+    if (networkSyncData.props.ShotsBeforeNextReload !== undefined)
+      this._behaviorData.ShotsBeforeNextReload = networkSyncData.props.ShotsBeforeNextReload;
+    if (networkSyncData.props.TotalShotsFired !== undefined)
+      this._behaviorData.TotalShotsFired = networkSyncData.props.TotalShotsFired;
+    if (networkSyncData.props.TotalBulletsCreated !== undefined)
+      this._behaviorData.TotalBulletsCreated = networkSyncData.props.TotalBulletsCreated;
+    if (networkSyncData.props.StartingAmmo !== undefined)
+      this._behaviorData.StartingAmmo = networkSyncData.props.StartingAmmo;
+    if (networkSyncData.props.TotalReloadsCompleted !== undefined)
+      this._behaviorData.TotalReloadsCompleted = networkSyncData.props.TotalReloadsCompleted;
+    if (networkSyncData.props.UnlimitedAmmo !== undefined)
+      this._behaviorData.UnlimitedAmmo = networkSyncData.props.UnlimitedAmmo;
+    if (networkSyncData.props.ReloadInProgress !== undefined)
+      this._behaviorData.ReloadInProgress = networkSyncData.props.ReloadInProgress;
+    if (networkSyncData.props.HeatIncreasePerShot !== undefined)
+      this._behaviorData.HeatIncreasePerShot = networkSyncData.props.HeatIncreasePerShot;
+    if (networkSyncData.props.HeatLevel !== undefined)
+      this._behaviorData.HeatLevel = networkSyncData.props.HeatLevel;
+    if (networkSyncData.props.AutomaticReloading !== undefined)
+      this._behaviorData.AutomaticReloading = networkSyncData.props.AutomaticReloading;
+    if (networkSyncData.props.OverheatDuration !== undefined)
+      this._behaviorData.OverheatDuration = networkSyncData.props.OverheatDuration;
+    if (networkSyncData.props.LinearCoolingRate !== undefined)
+      this._behaviorData.LinearCoolingRate = networkSyncData.props.LinearCoolingRate;
+    if (networkSyncData.props.ExponentialCoolingRate !== undefined)
+      this._behaviorData.ExponentialCoolingRate = networkSyncData.props.ExponentialCoolingRate;
+    if (networkSyncData.props.BulletLayer !== undefined)
+      this._behaviorData.BulletLayer = networkSyncData.props.BulletLayer;
+    if (networkSyncData.props.RandomizedAngle !== undefined)
+      this._behaviorData.RandomizedAngle = networkSyncData.props.RandomizedAngle;
+    if (networkSyncData.props.BulletSpeedVariance !== undefined)
+      this._behaviorData.BulletSpeedVariance = networkSyncData.props.BulletSpeedVariance;
+  }
+
   // Properties:
   
   _getFireCooldown() {
@@ -349,6 +440,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -948,6 +1042,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1059,6 +1156,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1171,6 +1271,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1419,6 +1522,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1658,6 +1764,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1770,6 +1879,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1875,6 +1987,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -1970,6 +2085,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2056,6 +2174,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2145,6 +2266,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2235,6 +2359,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2322,6 +2449,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2411,6 +2541,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2501,6 +2634,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2588,6 +2724,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2677,6 +2816,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2767,6 +2909,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2854,6 +2999,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -2943,6 +3091,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3033,6 +3184,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3123,6 +3277,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3233,6 +3390,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3343,6 +3503,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3430,6 +3593,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3519,6 +3685,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3609,6 +3778,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3696,6 +3868,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3785,6 +3960,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3875,6 +4053,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -3962,6 +4143,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4051,6 +4235,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4141,6 +4328,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4228,6 +4418,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4317,6 +4510,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4407,6 +4603,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4494,6 +4693,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4583,6 +4785,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4673,6 +4878,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4760,6 +4968,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4873,6 +5084,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -4963,6 +5177,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5053,6 +5270,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5142,6 +5362,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5231,6 +5454,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5317,6 +5543,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5430,6 +5659,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5520,6 +5752,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5627,6 +5862,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5714,6 +5952,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5803,6 +6044,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5893,6 +6137,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -5980,6 +6227,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6069,6 +6319,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6159,6 +6412,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6315,6 +6571,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6402,6 +6661,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6488,6 +6750,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6574,6 +6839,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6660,6 +6928,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6746,6 +7017,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6832,6 +7106,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -6918,6 +7195,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7014,6 +7294,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7119,6 +7402,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7321,6 +7607,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7426,6 +7715,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7531,6 +7823,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7647,6 +7942,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7770,6 +8068,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -7907,6 +8208,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
@@ -8006,6 +8310,9 @@ var eventsFunctionContext = {
   _behaviorNamesMap: {
 "Behavior": Behavior
 },
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("FireBullet"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("FireBullet"),
+  localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
   },
